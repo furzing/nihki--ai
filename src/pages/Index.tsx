@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { ArrowRight, Mic, Globe, Zap, Users, Languages, Clock, Star, Play, Volume2 } from "lucide-react";
+import { ArrowRight, Mic, Globe, Zap, Users, Languages, Clock, Star, Play, Volume2, MicIcon, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import DemoRequestForm from "@/components/DemoRequestForm";
@@ -14,13 +14,12 @@ const Index = () => {
       <nav className="fixed top-0 z-40 w-full bg-black/80 backdrop-blur-xl border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center">
               <img 
                 src="/lovable-uploads/c7a10dcb-5d79-4ef7-a5ad-39163f662bd4.png" 
                 alt="Nihki Logo" 
-                className="h-8 w-auto brightness-0 invert"
+                className="h-10 w-auto"
               />
-              <span className="text-2xl font-bold">Nihki</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <a href="#demo" className="text-gray-300 hover:text-white transition-colors">Demo</a>
@@ -84,56 +83,138 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Live Demo Visualization */}
+      {/* Live Conference Interpretation Showcase */}
       <section id="demo" className="relative py-32 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-6">
-              Watch Language <span className="text-blue-400">Transform</span>
+              Live <span className="text-blue-400">Conference</span> Interpretation
             </h2>
+            <p className="text-xl text-gray-400">Watch seamless multilingual conversations unfold in real-time</p>
           </div>
 
-          <div className="relative max-w-4xl mx-auto">
-            {/* Conversation Simulation */}
+          <div className="relative max-w-6xl mx-auto">
+            {/* Conference Room Simulation */}
             <div className="bg-gray-900/50 backdrop-blur-xl rounded-3xl p-8 border border-gray-700">
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold">🇺🇸</span>
-                  </div>
-                  <div className="flex-1">
-                    <div className="bg-blue-500/20 rounded-2xl p-4 border border-blue-500/30">
-                      <div className="flex items-center space-x-2 mb-2">
-                        <Volume2 className="w-4 h-4 text-blue-400" />
-                        <span className="text-sm text-blue-400">English</span>
+              <div className="flex justify-between items-center mb-8">
+                <div className="flex items-center space-x-3">
+                  <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                  <span className="text-red-400 font-semibold">LIVE</span>
+                  <span className="text-gray-400">International Business Meeting</span>
+                </div>
+                <div className="flex items-center space-x-2 text-sm text-gray-400">
+                  <Users className="w-4 h-4" />
+                  <span>4 participants • 3 languages</span>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Left side - Speakers */}
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white font-bold">🇺🇸</span>
+                    </div>
+                    <div className="flex-1">
+                      <div className="bg-blue-500/20 rounded-2xl p-4 border border-blue-500/30 relative">
+                        <div className="flex items-center space-x-2 mb-2">
+                          <MicIcon className="w-4 h-4 text-blue-400 animate-pulse" />
+                          <span className="text-xs text-blue-400 font-semibold">Sarah (CEO)</span>
+                        </div>
+                        <p className="text-sm">"Let's discuss the Q4 projections and how they align with our European expansion strategy..."</p>
                       </div>
-                      <p className="text-lg">"How do you feel about the new project timeline?"</p>
                     </div>
                   </div>
-                </div>
-                
-                <div className="flex justify-center">
-                  <div className="flex items-center space-x-2 text-purple-400">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-                    <span className="text-sm ml-2">AI Processing...</span>
+                  
+                  <div className="flex items-start space-x-4">
+                    <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white font-bold">🇪🇸</span>
+                    </div>
+                    <div className="flex-1">
+                      <div className="bg-green-500/20 rounded-2xl p-4 border border-green-500/30">
+                        <div className="flex items-center space-x-2 mb-2">
+                          <MicIcon className="w-4 h-4 text-green-400 animate-pulse" />
+                          <span className="text-xs text-green-400 font-semibold">Carlos (Director)</span>
+                        </div>
+                        <p className="text-sm">"Me parece excelente la propuesta, pero necesitamos considerar las regulaciones locales..."</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white font-bold">🇫🇷</span>
+                    </div>
+                    <div className="flex-1">
+                      <div className="bg-purple-500/20 rounded-2xl p-4 border border-purple-500/30">
+                        <div className="flex items-center space-x-2 mb-2">
+                          <MicIcon className="w-4 h-4 text-purple-400 animate-pulse" />
+                          <span className="text-xs text-purple-400 font-semibold">Marie (Partner)</span>
+                        </div>
+                        <p className="text-sm">"Tout à fait d'accord avec Carlos. Nous devons aussi analyser l'impact sur nos équipes..."</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold">🇪🇸</span>
-                  </div>
-                  <div className="flex-1">
-                    <div className="bg-green-500/20 rounded-2xl p-4 border border-green-500/30">
-                      <div className="flex items-center space-x-2 mb-2">
-                        <Volume2 className="w-4 h-4 text-green-400" />
-                        <span className="text-sm text-green-400">Español</span>
+                {/* Right side - AI Processing */}
+                <div className="space-y-6">
+                  <div className="bg-gray-800/50 rounded-2xl p-6 border border-gray-600">
+                    <div className="flex items-center space-x-3 mb-4">
+                      <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center">
+                        <Zap className="w-4 h-4 text-white" />
                       </div>
-                      <p className="text-lg">"¿Cómo te sientes acerca del nuevo cronograma del proyecto?"</p>
+                      <span className="font-semibold text-cyan-400">Nihki AI Processing</span>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+                        <span className="text-xs text-gray-300">Real-time speech recognition</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '0.3s'}}></div>
+                        <span className="text-xs text-gray-300">Context-aware translation</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.6s'}}></div>
+                        <span className="text-xs text-gray-300">Natural voice synthesis</span>
+                      </div>
                     </div>
                   </div>
+
+                  <div className="space-y-4">
+                    <div className="bg-gray-800/30 rounded-xl p-4 border border-gray-600">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <Headphones className="w-4 h-4 text-blue-400" />
+                        <span className="text-xs text-blue-400 font-semibold">For Spanish Speaker</span>
+                      </div>
+                      <p className="text-sm text-gray-200">"Discutamos las proyecciones del Q4 y cómo se alinean con nuestra estrategia de expansión europea..."</p>
+                    </div>
+
+                    <div className="bg-gray-800/30 rounded-xl p-4 border border-gray-600">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <Headphones className="w-4 h-4 text-green-400" />
+                        <span className="text-xs text-green-400 font-semibold">For English Speaker</span>
+                      </div>
+                      <p className="text-sm text-gray-200">"The proposal seems excellent to me, but we need to consider local regulations..."</p>
+                    </div>
+
+                    <div className="bg-gray-800/30 rounded-xl p-4 border border-gray-600">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <Headphones className="w-4 h-4 text-purple-400" />
+                        <span className="text-xs text-purple-400 font-semibold">For French Speaker</span>
+                      </div>
+                      <p className="text-sm text-gray-200">"I completely agree with Carlos. We must also analyze the impact on our teams..."</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 text-center">
+                <div className="inline-flex items-center space-x-2 px-4 py-2 bg-green-500/20 rounded-full border border-green-500/30">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-sm text-green-400 font-semibold">All participants understand each other perfectly</span>
                 </div>
               </div>
             </div>
@@ -288,13 +369,12 @@ const Index = () => {
       <footer className="bg-gray-900 py-16 border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-3 mb-8 md:mb-0">
+            <div className="flex items-center mb-8 md:mb-0">
               <img 
                 src="/lovable-uploads/c7a10dcb-5d79-4ef7-a5ad-39163f662bd4.png" 
                 alt="Nihki Logo" 
-                className="h-8 w-auto brightness-0 invert"
+                className="h-10 w-auto"
               />
-              <span className="text-2xl font-bold">Nihki</span>
             </div>
             <div className="flex space-x-8 text-gray-400">
               <a href="#" className="hover:text-white transition-colors">Privacy</a>
