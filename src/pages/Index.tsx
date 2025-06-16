@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { ArrowRight, Mic, Globe, Zap, Users, Languages, Clock, Star, Play, Volume2, MicIcon, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -456,17 +455,7 @@ const Index = () => {
 
       {/* Demo Form Modal */}
       {showDemoForm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl p-8 max-w-md w-full relative">
-            <button 
-              onClick={() => setShowDemoForm(false)}
-              className="absolute top-4 right-4 text-gray-600 hover:text-black"
-            >
-              ✕
-            </button>
-            <DemoRequestForm />
-          </div>
-        </div>
+        <DemoRequestForm onClose={() => setShowDemoForm(false)} />
       )}
     </div>
   );
