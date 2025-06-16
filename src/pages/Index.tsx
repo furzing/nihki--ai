@@ -1,13 +1,10 @@
-
 import { useState } from "react";
 import { ArrowRight, Mic, Globe, Zap, Users, Languages, Clock, Star, Play, Volume2, MicIcon, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import DemoRequestForm from "@/components/DemoRequestForm";
-
 const Index = () => {
   const [showDemoForm, setShowDemoForm] = useState(false);
-
   return <div className="min-h-screen bg-white text-black overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 z-40 w-full bg-white/90 backdrop-blur-xl border-b border-black/10">
@@ -293,7 +290,7 @@ const Index = () => {
                   <div className="text-sm text-gray-600">Accuracy Rate</div>
                 </div>
                 <div className="p-4 bg-black/5 rounded-xl border border-black/10">
-                  <div className="text-3xl font-black text-black mb-2">3</div>
+                  <div className="text-3xl font-black text-black mb-2">50+</div>
                   <div className="text-sm text-gray-600">Languages</div>
                 </div>
               </div>
@@ -455,5 +452,4 @@ Speak to the world using Nihki.</p>
       {showDemoForm && <DemoRequestForm onClose={() => setShowDemoForm(false)} />}
     </div>;
 };
-
 export default Index;
