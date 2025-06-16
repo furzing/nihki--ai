@@ -16,7 +16,7 @@ const Index = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <img 
-                src="/lovable-uploads/c7a10dcb-5d79-4ef7-a5ad-39163f662bd4.png" 
+                src="/lovable-uploads/7efd4121-aa13-4fa8-871e-7bb35cf9d587.png" 
                 alt="Nihki" 
                 className="h-12 w-auto"
               />
@@ -88,53 +88,66 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Live Interpretation Showcase */}
-      <section id="demo" className="relative py-32 bg-gradient-to-b from-black to-gray-900">
+      {/* Live Conference Demo */}
+      <section id="demo" className="relative py-32 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Live Conference</span> Interpretation
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 border border-white/20 mb-8">
+              <Play className="w-5 h-5 mr-2 text-white" />
+              <span className="text-white/90">Live Demo in Action</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-black mb-6 text-white">
+              MULTILINGUAL 
+              <span className="block bg-gradient-to-r from-white via-gray-400 to-white bg-clip-text text-transparent">
+                CONFERENCE
+              </span>
+              <span className="block">LIVE NOW</span>
             </h2>
-            <p className="text-xl text-gray-400">Watch real-time conversation flow across languages</p>
+            <p className="text-xl text-gray-400 mb-8">Real business meeting happening across 3 languages simultaneously</p>
+            
+            {/* Live Indicator */}
+            <div className="flex items-center justify-center space-x-3 mb-12">
+              <div className="relative">
+                <div className="w-4 h-4 bg-white rounded-full animate-ping absolute"></div>
+                <div className="w-4 h-4 bg-white rounded-full"></div>
+              </div>
+              <span className="text-white font-bold text-lg">LIVE CONFERENCE</span>
+              <div className="px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm border border-white/30">
+                <span className="text-sm text-white font-semibold">4 Speakers • 3 Languages</span>
+              </div>
+            </div>
           </div>
 
           <div className="relative max-w-6xl mx-auto">
             {/* Main Demo Container */}
-            <div className="bg-black/60 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl">
+            <div className="bg-gray-900/30 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
               
-              {/* Conference Header */}
-              <div className="flex justify-between items-center mb-8">
-                <div className="flex items-center space-x-4">
-                  <div className="relative">
-                    <div className="w-4 h-4 bg-white rounded-full animate-ping absolute"></div>
-                    <div className="w-4 h-4 bg-white rounded-full"></div>
-                  </div>
-                  <span className="text-white font-bold text-lg">LIVE CONFERENCE</span>
-                  <div className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">
-                    Global Team Meeting
-                  </div>
+              {/* Progress Bar */}
+              <div className="mb-8">
+                <div className="flex justify-between text-sm text-gray-400 mb-2">
+                  <span>Conference Progress</span>
+                  <span>47 minutes elapsed</span>
                 </div>
-                <div className="flex items-center space-x-2 text-sm text-gray-400">
-                  <Users className="w-4 h-4" />
-                  <span>3 Languages • 4 Participants</span>
+                <div className="w-full bg-white/10 rounded-full h-2">
+                  <div className="bg-white h-2 rounded-full animate-pulse" style={{width: '68%'}}></div>
                 </div>
               </div>
 
               {/* Conversation Flow */}
-              <div className="space-y-6">
+              <div className="space-y-8">
                 
-                {/* Speaker 1 - English to Others */}
-                <div className="grid lg:grid-cols-2 gap-6">
+                {/* Speaker 1 - English */}
+                <div className="grid lg:grid-cols-2 gap-8">
                   <div className="space-y-4">
-                    <div className="flex items-center space-x-3 mb-3">
-                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                        <span className="text-white font-bold">🇺🇸</span>
+                    <div className="flex items-center space-x-4 mb-4">
+                      <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center border-2 border-white/30">
+                        <span className="text-white font-bold text-lg">🇺🇸</span>
                       </div>
-                      <div>
-                        <div className="text-white font-semibold">Sarah Chen - CEO</div>
-                        <div className="text-gray-400 text-sm">Speaking in English</div>
+                      <div className="flex-1">
+                        <div className="text-white font-bold text-lg">Sarah Chen - CEO</div>
+                        <div className="text-gray-400">Speaking in English</div>
                       </div>
-                      <div className="ml-auto flex items-center space-x-1">
+                      <div className="flex items-center space-x-1">
                         <div className="w-2 h-8 bg-white/80 rounded animate-pulse"></div>
                         <div className="w-2 h-6 bg-white/60 rounded animate-pulse" style={{animationDelay: '0.1s'}}></div>
                         <div className="w-2 h-10 bg-white/90 rounded animate-pulse" style={{animationDelay: '0.2s'}}></div>
@@ -149,27 +162,34 @@ const Index = () => {
                   </div>
 
                   <div className="space-y-4">
-                    <div className="flex items-center justify-center mb-4">
-                      <div className="flex items-center space-x-2 px-4 py-2 bg-white/20 rounded-full border border-white/30">
-                        <Zap className="w-4 h-4 text-white animate-pulse" />
-                        <span className="text-sm text-white font-semibold">AI Processing</span>
+                    <div className="flex items-center justify-center mb-6">
+                      <div className="flex items-center space-x-3 px-6 py-3 bg-white/20 rounded-full border border-white/30 backdrop-blur-sm">
+                        <Zap className="w-5 h-5 text-white animate-pulse" />
+                        <span className="text-sm text-white font-bold">AI PROCESSING</span>
+                        <div className="flex space-x-1">
+                          <div className="w-1 h-1 bg-white rounded-full animate-pulse"></div>
+                          <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                          <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                        </div>
                       </div>
                     </div>
                     
                     {/* Output to Spanish */}
-                    <div className="bg-black/40 rounded-xl p-4 border border-white/10">
-                      <div className="flex items-center space-x-2 mb-2">
+                    <div className="bg-black/40 rounded-xl p-4 border border-white/10 backdrop-blur-sm">
+                      <div className="flex items-center space-x-2 mb-3">
                         <Headphones className="w-4 h-4 text-white" />
                         <span className="text-xs text-white/80 font-semibold">→ Spanish (Carlos)</span>
+                        <div className="ml-auto w-2 h-2 bg-white rounded-full animate-pulse"></div>
                       </div>
                       <p className="text-white/90">"Profundicemos en nuestra estrategia de expansión para Q2. Creo que el mercado europeo presenta nuestra mayor oportunidad..."</p>
                     </div>
 
                     {/* Output to French */}
-                    <div className="bg-black/40 rounded-xl p-4 border border-white/10">
-                      <div className="flex items-center space-x-2 mb-2">
+                    <div className="bg-black/40 rounded-xl p-4 border border-white/10 backdrop-blur-sm">
+                      <div className="flex items-center space-x-2 mb-3">
                         <Headphones className="w-4 h-4 text-white" />
                         <span className="text-xs text-white/80 font-semibold">→ French (Marie)</span>
+                        <div className="ml-auto w-2 h-2 bg-white rounded-full animate-pulse"></div>
                       </div>
                       <p className="text-white/90">"Approfondissons notre stratégie d'expansion Q2. Je crois que le marché européen présente notre plus grande opportunité..."</p>
                     </div>
@@ -177,26 +197,26 @@ const Index = () => {
                 </div>
 
                 {/* Visual Separator */}
-                <div className="flex items-center justify-center py-4">
-                  <div className="flex space-x-1">
-                    <div className="w-2 h-2 bg-white/60 rounded-full animate-pulse"></div>
-                    <div className="w-2 h-2 bg-white/40 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                    <div className="w-2 h-2 bg-white/60 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                <div className="flex items-center justify-center py-6">
+                  <div className="flex space-x-2">
+                    <div className="w-3 h-3 bg-white/60 rounded-full animate-pulse"></div>
+                    <div className="w-3 h-3 bg-white/40 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                    <div className="w-3 h-3 bg-white/60 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
                   </div>
                 </div>
 
-                {/* Speaker 2 Response - Spanish to Others */}
-                <div className="grid lg:grid-cols-2 gap-6">
+                {/* Speaker 2 Response - Spanish */}
+                <div className="grid lg:grid-cols-2 gap-8">
                   <div className="space-y-4">
-                    <div className="flex items-center space-x-3 mb-3">
-                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                        <span className="text-white font-bold">🇪🇸</span>
+                    <div className="flex items-center space-x-4 mb-4">
+                      <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center border-2 border-white/30">
+                        <span className="text-white font-bold text-lg">🇪🇸</span>
                       </div>
-                      <div>
-                        <div className="text-white font-semibold">Carlos Rodriguez - Sales</div>
-                        <div className="text-gray-400 text-sm">Speaking in Spanish</div>
+                      <div className="flex-1">
+                        <div className="text-white font-bold text-lg">Carlos Rodriguez</div>
+                        <div className="text-gray-400">Speaking in Spanish</div>
                       </div>
-                      <div className="ml-auto flex items-center space-x-1">
+                      <div className="flex items-center space-x-1">
                         <div className="w-2 h-7 bg-white/70 rounded animate-pulse" style={{animationDelay: '2s'}}></div>
                         <div className="w-2 h-9 bg-white/90 rounded animate-pulse" style={{animationDelay: '2.1s'}}></div>
                         <div className="w-2 h-5 bg-white/50 rounded animate-pulse" style={{animationDelay: '2.2s'}}></div>
@@ -210,25 +230,32 @@ const Index = () => {
                   </div>
 
                   <div className="space-y-4">
-                    <div className="flex items-center justify-center mb-4">
-                      <div className="flex items-center space-x-2 px-4 py-2 bg-white/20 rounded-full border border-white/30">
-                        <Zap className="w-4 h-4 text-white animate-pulse" style={{animationDelay: '2s'}} />
-                        <span className="text-sm text-white font-semibold">AI Processing</span>
+                    <div className="flex items-center justify-center mb-6">
+                      <div className="flex items-center space-x-3 px-6 py-3 bg-white/20 rounded-full border border-white/30 backdrop-blur-sm">
+                        <Zap className="w-5 h-5 text-white animate-pulse" style={{animationDelay: '2s'}} />
+                        <span className="text-sm text-white font-bold">AI PROCESSING</span>
+                        <div className="flex space-x-1">
+                          <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+                          <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{animationDelay: '2.2s'}}></div>
+                          <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{animationDelay: '2.4s'}}></div>
+                        </div>
                       </div>
                     </div>
                     
-                    <div className="bg-black/40 rounded-xl p-4 border border-white/10">
-                      <div className="flex items-center space-x-2 mb-2">
+                    <div className="bg-black/40 rounded-xl p-4 border border-white/10 backdrop-blur-sm">
+                      <div className="flex items-center space-x-2 mb-3">
                         <Headphones className="w-4 h-4 text-white" />
                         <span className="text-xs text-white/80 font-semibold">→ English (Sarah)</span>
+                        <div className="ml-auto w-2 h-2 bg-white rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
                       </div>
                       <p className="text-white/90">"I completely agree, Sarah. However, we should also consider the specific cultural differences of each European region..."</p>
                     </div>
 
-                    <div className="bg-black/40 rounded-xl p-4 border border-white/10">
-                      <div className="flex items-center space-x-2 mb-2">
+                    <div className="bg-black/40 rounded-xl p-4 border border-white/10 backdrop-blur-sm">
+                      <div className="flex items-center space-x-2 mb-3">
                         <Headphones className="w-4 h-4 text-white" />
                         <span className="text-xs text-white/80 font-semibold">→ French (Marie)</span>
+                        <div className="ml-auto w-2 h-2 bg-white rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
                       </div>
                       <p className="text-white/90">"Je suis complètement d'accord, Sarah. Cependant, nous devrions aussi considérer les différences culturelles spécifiques..."</p>
                     </div>
@@ -236,18 +263,18 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Success Metrics */}
-              <div className="mt-8 flex justify-center space-x-8">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-white">< 200ms</div>
+              {/* Performance Metrics */}
+              <div className="mt-12 grid grid-cols-3 gap-8 text-center">
+                <div className="p-4 bg-white/5 rounded-xl border border-white/10">
+                  <div className="text-3xl font-black text-white mb-2">< 200ms</div>
                   <div className="text-sm text-gray-400">Response Time</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-white">99.8%</div>
-                  <div className="text-sm text-gray-400">Accuracy</div>
+                <div className="p-4 bg-white/5 rounded-xl border border-white/10">
+                  <div className="text-3xl font-black text-white mb-2">99.8%</div>
+                  <div className="text-sm text-gray-400">Accuracy Rate</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-white">3</div>
+                <div className="p-4 bg-white/5 rounded-xl border border-white/10">
+                  <div className="text-3xl font-black text-white mb-2">3</div>
                   <div className="text-sm text-gray-400">Languages</div>
                 </div>
               </div>
@@ -267,9 +294,9 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all duration-300 hover:scale-105">
+            <Card className="bg-black/50 border-white/20 hover:bg-black/70 transition-all duration-300 hover:scale-105">
               <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-gradient-to-r from-white/20 to-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-12 hover:rotate-0 transition-transform duration-300">
+                <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-12 hover:rotate-0 transition-transform duration-300">
                   <Clock className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-white">Instant</h3>
@@ -277,9 +304,9 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all duration-300 hover:scale-105">
+            <Card className="bg-black/50 border-white/20 hover:bg-black/70 transition-all duration-300 hover:scale-105">
               <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-gradient-to-r from-white/20 to-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-12 hover:rotate-0 transition-transform duration-300">
+                <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-12 hover:rotate-0 transition-transform duration-300">
                   <Globe className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-white">Cultural</h3>
@@ -287,9 +314,9 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all duration-300 hover:scale-105">
+            <Card className="bg-black/50 border-white/20 hover:bg-black/70 transition-all duration-300 hover:scale-105">
               <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-gradient-to-r from-white/20 to-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-12 hover:rotate-0 transition-transform duration-300">
+                <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-12 hover:rotate-0 transition-transform duration-300">
                   <Users className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-white">Multi-Party</h3>
@@ -316,7 +343,7 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <div className="flex items-center space-x-4 p-6 bg-gray-900/50 rounded-2xl border border-gray-700">
+              <div className="flex items-center space-x-4 p-6 bg-gray-900/50 rounded-2xl border border-white/20">
                 <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center">
                   <Mic className="w-8 h-8 text-white" />
                 </div>
@@ -326,7 +353,7 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4 p-6 bg-gray-900/50 rounded-2xl border border-gray-700">
+              <div className="flex items-center space-x-4 p-6 bg-gray-900/50 rounded-2xl border border-white/20">
                 <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center">
                   <Languages className="w-8 h-8 text-white" />
                 </div>
@@ -336,7 +363,7 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4 p-6 bg-gray-900/50 rounded-2xl border border-gray-700">
+              <div className="flex items-center space-x-4 p-6 bg-gray-900/50 rounded-2xl border border-white/20">
                 <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center">
                   <Volume2 className="w-8 h-8 text-white" />
                 </div>
@@ -348,7 +375,7 @@ const Index = () => {
             </div>
 
             <div className="relative">
-              <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-8 border border-gray-700">
+              <div className="bg-gradient-to-r from-gray-900 to-black rounded-3xl p-8 border border-white/20">
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3 mb-6">
                     <div className="w-3 h-3 bg-white/60 rounded-full"></div>
@@ -379,8 +406,8 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-gradient-to-r from-white to-gray-200 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
+      <section className="py-32 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/5"></div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-5xl font-bold mb-8 text-black">
             Ready to Transform Communication?
@@ -405,7 +432,7 @@ const Index = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-8 md:mb-0">
               <img 
-                src="/lovable-uploads/c7a10dcb-5d79-4ef7-a5ad-39163f662bd4.png" 
+                src="/lovable-uploads/7efd4121-aa13-4fa8-871e-7bb35cf9d587.png" 
                 alt="Nihki" 
                 className="h-10 w-auto"
               />
