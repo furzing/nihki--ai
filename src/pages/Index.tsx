@@ -433,7 +433,7 @@ Speak to the world using Nihki.</p>
             <Button size="lg" variant="outline" className="text-xl px-12 py-6 border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300">Contact us for a Demo</Button>
           </div>
 
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center px-[36px]">
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center px-[23px] my-[47px]">
             
             
             <div>
