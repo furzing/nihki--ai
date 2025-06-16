@@ -1,10 +1,13 @@
+
 import { useState } from "react";
 import { ArrowRight, Mic, Globe, Zap, Users, Languages, Clock, Star, Play, Volume2, MicIcon, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import DemoRequestForm from "@/components/DemoRequestForm";
+
 const Index = () => {
   const [showDemoForm, setShowDemoForm] = useState(false);
+
   return <div className="min-h-screen bg-white text-black overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 z-40 w-full bg-white/90 backdrop-blur-xl border-b border-black/10">
@@ -433,16 +436,16 @@ Speak to the world using Nihki.</p>
             <Button size="lg" variant="outline" className="text-xl px-12 py-6 border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300">Contact us for a Demo</Button>
           </div>
 
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center px-[23px] my-[47px]">
-            
-            
-            <div>
-              <div className="text-4xl font-bold text-black mb-2">99.8%</div>
-              <div className="text-gray-600">Accuracy</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-black mb-2">24/7</div>
-              <div className="text-gray-600">Support</div>
+          <div className="mt-16 flex justify-center">
+            <div className="grid grid-cols-2 gap-12 text-center max-w-md">
+              <div>
+                <div className="text-4xl font-bold text-black mb-2">99.8%</div>
+                <div className="text-gray-600">Accuracy</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-black mb-2">24/7</div>
+                <div className="text-gray-600">Support</div>
+              </div>
             </div>
           </div>
         </div>
@@ -452,4 +455,5 @@ Speak to the world using Nihki.</p>
       {showDemoForm && <DemoRequestForm onClose={() => setShowDemoForm(false)} />}
     </div>;
 };
+
 export default Index;
