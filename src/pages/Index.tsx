@@ -268,7 +268,7 @@ const Index = () => {
               {/* Performance Metrics */}
               <div className="mt-12 grid grid-cols-3 gap-8 text-center">
                 <div className="p-4 bg-white/5 rounded-xl border border-white/10">
-                  <div className="text-3xl font-black text-white mb-2">< 200ms</div>
+                  <div className="text-3xl font-black text-white mb-2">{"<"} 200ms</div>
                   <div className="text-sm text-gray-400">Response Time</div>
                 </div>
                 <div className="p-4 bg-white/5 rounded-xl border border-white/10">
