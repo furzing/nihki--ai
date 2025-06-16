@@ -16,9 +16,9 @@ const Index = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <img 
-                src="/lovable-uploads/7efd4121-aa13-4fa8-871e-7bb35cf9d587.png" 
+                src="/lovable-uploads/c7a10dcb-5d79-4ef7-a5ad-39163f662bd4.png" 
                 alt="Nihki" 
-                className="h-12 w-auto filter brightness-0 invert"
+                className="h-12 w-auto"
               />
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -88,193 +88,167 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Live Interpretation Showcase - Redesigned */}
+      {/* Live Interpretation Showcase */}
       <section id="demo" className="relative py-32 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-6">
-              Watch <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Conversations</span> Flow
+              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Live Conference</span> Interpretation
             </h2>
-            <p className="text-xl text-gray-400">Live interpretation across languages in real-time</p>
+            <p className="text-xl text-gray-400">Watch real-time conversation flow across languages</p>
           </div>
 
           <div className="relative max-w-6xl mx-auto">
             {/* Main Demo Container */}
             <div className="bg-black/60 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl">
               
-              {/* Live Indicator */}
+              {/* Conference Header */}
               <div className="flex justify-between items-center mb-8">
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-4">
                   <div className="relative">
                     <div className="w-4 h-4 bg-white rounded-full animate-ping absolute"></div>
                     <div className="w-4 h-4 bg-white rounded-full"></div>
                   </div>
-                  <span className="text-white font-bold text-lg">LIVE INTERPRETATION</span>
+                  <span className="text-white font-bold text-lg">LIVE CONFERENCE</span>
+                  <div className="px-3 py-1 bg-white/20 rounded-full text-sm text-white">
+                    Global Team Meeting
+                  </div>
                 </div>
                 <div className="flex items-center space-x-2 text-sm text-gray-400">
                   <Users className="w-4 h-4" />
-                  <span>Global Team Meeting</span>
+                  <span>3 Languages • 4 Participants</span>
                 </div>
               </div>
 
-              {/* Split Screen Demo */}
-              <div className="grid lg:grid-cols-2 gap-8">
+              {/* Conversation Flow */}
+              <div className="space-y-6">
                 
-                {/* Left Side - Speakers */}
-                <div className="space-y-6">
-                  <h3 className="text-xl font-semibold text-white mb-6 text-center">What They Say</h3>
-                  
-                  {/* Speaker 1 - English */}
-                  <div className="relative">
-                    <div className="absolute -left-2 top-0 w-1 h-full bg-white rounded-full animate-pulse"></div>
-                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 ml-4">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                          <span className="text-white font-bold text-lg">🇺🇸</span>
-                        </div>
-                        <div>
-                          <div className="text-white font-semibold">Sarah Chen</div>
-                          <div className="text-gray-400 text-sm">Product Manager, San Francisco</div>
-                        </div>
-                        <div className="ml-auto">
-                          <div className="flex items-center space-x-1">
-                            <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                            <div className="w-2 h-2 bg-white/60 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                            <div className="w-2 h-2 bg-white/30 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
-                          </div>
-                        </div>
+                {/* Speaker 1 - English to Others */}
+                <div className="grid lg:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3 mb-3">
+                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                        <span className="text-white font-bold">🇺🇸</span>
                       </div>
-                      <p className="text-white/90 text-lg leading-relaxed">
-                        "I think we should prioritize the European market expansion for Q2. The demand metrics are showing really promising growth patterns..."
+                      <div>
+                        <div className="text-white font-semibold">Sarah Chen - CEO</div>
+                        <div className="text-gray-400 text-sm">Speaking in English</div>
+                      </div>
+                      <div className="ml-auto flex items-center space-x-1">
+                        <div className="w-2 h-8 bg-white/80 rounded animate-pulse"></div>
+                        <div className="w-2 h-6 bg-white/60 rounded animate-pulse" style={{animationDelay: '0.1s'}}></div>
+                        <div className="w-2 h-10 bg-white/90 rounded animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                        <div className="w-2 h-4 bg-white/40 rounded animate-pulse" style={{animationDelay: '0.3s'}}></div>
+                      </div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                      <p className="text-white text-lg leading-relaxed">
+                        "Let's dive into our Q2 expansion strategy. I believe the European market presents our biggest opportunity, especially given the regulatory changes we've been tracking..."
                       </p>
                     </div>
                   </div>
 
-                  {/* Speaker 2 - Spanish */}
-                  <div className="relative">
-                    <div className="absolute -left-2 top-0 w-1 h-full bg-white rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
-                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 ml-4">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                          <span className="text-white font-bold text-lg">🇪🇸</span>
-                        </div>
-                        <div>
-                          <div className="text-white font-semibold">Carlos Rodriguez</div>
-                          <div className="text-gray-400 text-sm">Sales Director, Madrid</div>
-                        </div>
-                        <div className="ml-auto">
-                          <div className="flex items-center space-x-1">
-                            <div className="w-2 h-2 bg-white rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
-                            <div className="w-2 h-2 bg-white/60 rounded-full animate-pulse" style={{animationDelay: '2.2s'}}></div>
-                            <div className="w-2 h-2 bg-white/30 rounded-full animate-pulse" style={{animationDelay: '2.4s'}}></div>
-                          </div>
-                        </div>
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-center mb-4">
+                      <div className="flex items-center space-x-2 px-4 py-2 bg-white/20 rounded-full border border-white/30">
+                        <Zap className="w-4 h-4 text-white animate-pulse" />
+                        <span className="text-sm text-white font-semibold">AI Processing</span>
                       </div>
-                      <p className="text-white/90 text-lg leading-relaxed">
-                        "Estoy completamente de acuerdo, Sarah. Pero también deberíamos considerar las diferencias culturales en nuestro approach de marketing..."
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Speaker 3 - French */}
-                  <div className="relative">
-                    <div className="absolute -left-2 top-0 w-1 h-full bg-white rounded-full animate-pulse" style={{animationDelay: '4s'}}></div>
-                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 ml-4">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                          <span className="text-white font-bold text-lg">🇫🇷</span>
-                        </div>
-                        <div>
-                          <div className="text-white font-semibold">Marie Dubois</div>
-                          <div className="text-gray-400 text-sm">Regional Manager, Paris</div>
-                        </div>
-                        <div className="ml-auto">
-                          <div className="flex items-center space-x-1">
-                            <div className="w-2 h-2 bg-white rounded-full animate-pulse" style={{animationDelay: '4s'}}></div>
-                            <div className="w-2 h-2 bg-white/60 rounded-full animate-pulse" style={{animationDelay: '4.2s'}}></div>
-                            <div className="w-2 h-2 bg-white/30 rounded-full animate-pulse" style={{animationDelay: '4.4s'}}></div>
-                          </div>
-                        </div>
-                      </div>
-                      <p className="text-white/90 text-lg leading-relaxed">
-                        "Excellente observation, Carlos. Je propose qu'on établisse une task force pour analyser ces spécificités régionales..."
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right Side - AI Processing & Output */}
-                <div className="space-y-6">
-                  <h3 className="text-xl font-semibold text-white mb-6 text-center">What Everyone Hears</h3>
-                  
-                  {/* AI Processing Center */}
-                  <div className="bg-gradient-to-r from-white/10 to-white/5 rounded-2xl p-6 border border-white/20 mb-6">
-                    <div className="flex items-center space-x-3 mb-4">
-                      <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                        <Zap className="w-5 h-5 text-black" />
-                      </div>
-                      <span className="font-bold text-white text-lg">Nihki AI Processing</span>
                     </div>
                     
-                    <div className="space-y-3">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
-                        <span className="text-sm text-white/80">Speech Recognition</span>
-                        <div className="flex-1 h-1 bg-white/20 rounded">
-                          <div className="h-1 bg-white rounded animate-pulse w-full"></div>
-                        </div>
+                    {/* Output to Spanish */}
+                    <div className="bg-black/40 rounded-xl p-4 border border-white/10">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <Headphones className="w-4 h-4 text-white" />
+                        <span className="text-xs text-white/80 font-semibold">→ Spanish (Carlos)</span>
                       </div>
-                      <div className="flex items-center space-x-3">
-                        <div className="w-3 h-3 bg-white rounded-full animate-pulse" style={{animationDelay: '0.3s'}}></div>
-                        <span className="text-sm text-white/80">Context Analysis</span>
-                        <div className="flex-1 h-1 bg-white/20 rounded">
-                          <div className="h-1 bg-white rounded animate-pulse w-4/5" style={{animationDelay: '0.3s'}}></div>
-                        </div>
+                      <p className="text-white/90">"Profundicemos en nuestra estrategia de expansión para Q2. Creo que el mercado europeo presenta nuestra mayor oportunidad..."</p>
+                    </div>
+
+                    {/* Output to French */}
+                    <div className="bg-black/40 rounded-xl p-4 border border-white/10">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <Headphones className="w-4 h-4 text-white" />
+                        <span className="text-xs text-white/80 font-semibold">→ French (Marie)</span>
                       </div>
-                      <div className="flex items-center space-x-3">
-                        <div className="w-3 h-3 bg-white rounded-full animate-pulse" style={{animationDelay: '0.6s'}}></div>
-                        <span className="text-sm text-white/80">Voice Synthesis</span>
-                        <div className="flex-1 h-1 bg-white/20 rounded">
-                          <div className="h-1 bg-white rounded animate-pulse w-3/4" style={{animationDelay: '0.6s'}}></div>
-                        </div>
+                      <p className="text-white/90">"Approfondissons notre stratégie d'expansion Q2. Je crois que le marché européen présente notre plus grande opportunité..."</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Visual Separator */}
+                <div className="flex items-center justify-center py-4">
+                  <div className="flex space-x-1">
+                    <div className="w-2 h-2 bg-white/60 rounded-full animate-pulse"></div>
+                    <div className="w-2 h-2 bg-white/40 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                    <div className="w-2 h-2 bg-white/60 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                  </div>
+                </div>
+
+                {/* Speaker 2 Response - Spanish to Others */}
+                <div className="grid lg:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3 mb-3">
+                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                        <span className="text-white font-bold">🇪🇸</span>
                       </div>
+                      <div>
+                        <div className="text-white font-semibold">Carlos Rodriguez - Sales</div>
+                        <div className="text-gray-400 text-sm">Speaking in Spanish</div>
+                      </div>
+                      <div className="ml-auto flex items-center space-x-1">
+                        <div className="w-2 h-7 bg-white/70 rounded animate-pulse" style={{animationDelay: '2s'}}></div>
+                        <div className="w-2 h-9 bg-white/90 rounded animate-pulse" style={{animationDelay: '2.1s'}}></div>
+                        <div className="w-2 h-5 bg-white/50 rounded animate-pulse" style={{animationDelay: '2.2s'}}></div>
+                      </div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                      <p className="text-white text-lg leading-relaxed">
+                        "Estoy completamente de acuerdo, Sarah. Sin embargo, también deberíamos considerar las diferencias culturales específicas de cada región europea..."
+                      </p>
                     </div>
                   </div>
 
-                  {/* Interpreted Output */}
                   <div className="space-y-4">
+                    <div className="flex items-center justify-center mb-4">
+                      <div className="flex items-center space-x-2 px-4 py-2 bg-white/20 rounded-full border border-white/30">
+                        <Zap className="w-4 h-4 text-white animate-pulse" style={{animationDelay: '2s'}} />
+                        <span className="text-sm text-white font-semibold">AI Processing</span>
+                      </div>
+                    </div>
+                    
                     <div className="bg-black/40 rounded-xl p-4 border border-white/10">
                       <div className="flex items-center space-x-2 mb-2">
                         <Headphones className="w-4 h-4 text-white" />
-                        <span className="text-xs text-white font-semibold">Spanish → English/French</span>
+                        <span className="text-xs text-white/80 font-semibold">→ English (Sarah)</span>
                       </div>
-                      <p className="text-sm text-white/90">"I completely agree, Sarah. But we should also consider cultural differences in our marketing approach..."</p>
+                      <p className="text-white/90">"I completely agree, Sarah. However, we should also consider the specific cultural differences of each European region..."</p>
                     </div>
 
                     <div className="bg-black/40 rounded-xl p-4 border border-white/10">
                       <div className="flex items-center space-x-2 mb-2">
                         <Headphones className="w-4 h-4 text-white" />
-                        <span className="text-xs text-white font-semibold">French → English/Spanish</span>
+                        <span className="text-xs text-white/80 font-semibold">→ French (Marie)</span>
                       </div>
-                      <p className="text-sm text-white/90">"Excellent observation, Carlos. I suggest we establish a task force to analyze these regional specificities..."</p>
-                    </div>
-
-                    <div className="bg-black/40 rounded-xl p-4 border border-white/10">
-                      <div className="flex items-center space-x-2 mb-2">
-                        <Headphones className="w-4 h-4 text-white" />
-                        <span className="text-xs text-white font-semibold">English → Spanish/French</span>
-                      </div>
-                      <p className="text-sm text-white/90">"Creo que deberíamos priorizar la expansión del mercado europeo para Q2..."</p>
+                      <p className="text-white/90">"Je suis complètement d'accord, Sarah. Cependant, nous devrions aussi considérer les différences culturelles spécifiques..."</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Success Indicator */}
-              <div className="mt-8 text-center">
-                <div className="inline-flex items-center space-x-2 px-6 py-3 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
-                  <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
-                  <span className="text-sm text-white font-semibold">Perfect understanding across all languages</span>
+              {/* Success Metrics */}
+              <div className="mt-8 flex justify-center space-x-8">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">< 200ms</div>
+                  <div className="text-sm text-gray-400">Response Time</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">99.8%</div>
+                  <div className="text-sm text-gray-400">Accuracy</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">3</div>
+                  <div className="text-sm text-gray-400">Languages</div>
                 </div>
               </div>
             </div>
@@ -287,7 +261,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold mb-6">
-              Beyond <span className="text-purple-400">Translation</span>
+              Beyond <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Translation</span>
             </h2>
             <p className="text-xl text-gray-400">AI that understands context, emotion, and culture</p>
           </div>
@@ -295,30 +269,30 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all duration-300 hover:scale-105">
               <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-12 hover:rotate-0 transition-transform duration-300">
+                <div className="w-20 h-20 bg-gradient-to-r from-white/20 to-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-12 hover:rotate-0 transition-transform duration-300">
                   <Clock className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Instant</h3>
+                <h3 className="text-2xl font-bold mb-4 text-white">Instant</h3>
                 <p className="text-gray-400">Ultra-low latency processing for natural conversation flow</p>
               </CardContent>
             </Card>
 
             <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all duration-300 hover:scale-105">
               <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-12 hover:rotate-0 transition-transform duration-300">
+                <div className="w-20 h-20 bg-gradient-to-r from-white/20 to-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-12 hover:rotate-0 transition-transform duration-300">
                   <Globe className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Cultural</h3>
+                <h3 className="text-2xl font-bold mb-4 text-white">Cultural</h3>
                 <p className="text-gray-400">Understands context, emotion, and cultural nuances</p>
               </CardContent>
             </Card>
 
             <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all duration-300 hover:scale-105">
               <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-12 hover:rotate-0 transition-transform duration-300">
+                <div className="w-20 h-20 bg-gradient-to-r from-white/20 to-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-12 hover:rotate-0 transition-transform duration-300">
                   <Users className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Multi-Party</h3>
+                <h3 className="text-2xl font-bold mb-4 text-white">Multi-Party</h3>
                 <p className="text-gray-400">Manages complex conversations with multiple speakers</p>
               </CardContent>
             </Card>
@@ -329,45 +303,45 @@ const Index = () => {
       {/* Technology Showcase */}
       <section id="technology" className="py-32 bg-black relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 left-1/4 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold mb-6">
-              Powered by <span className="text-blue-400">Advanced AI</span>
+              Powered by <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Advanced AI</span>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="flex items-center space-x-4 p-6 bg-gray-900/50 rounded-2xl border border-gray-700">
-                <div className="w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center">
-                  <Mic className="w-8 h-8 text-blue-400" />
+                <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center">
+                  <Mic className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">Speech Recognition</h3>
+                  <h3 className="text-xl font-bold text-white">Speech Recognition</h3>
                   <p className="text-gray-400">Captures every nuance across accents</p>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4 p-6 bg-gray-900/50 rounded-2xl border border-gray-700">
-                <div className="w-16 h-16 bg-purple-500/20 rounded-xl flex items-center justify-center">
-                  <Languages className="w-8 h-8 text-purple-400" />
+                <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center">
+                  <Languages className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">Neural Translation</h3>
+                  <h3 className="text-xl font-bold text-white">Neural Translation</h3>
                   <p className="text-gray-400">Preserves meaning and context</p>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4 p-6 bg-gray-900/50 rounded-2xl border border-gray-700">
-                <div className="w-16 h-16 bg-green-500/20 rounded-xl flex items-center justify-center">
-                  <Volume2 className="w-8 h-8 text-green-400" />
+                <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center">
+                  <Volume2 className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">Voice Synthesis</h3>
+                  <h3 className="text-xl font-bold text-white">Voice Synthesis</h3>
                   <p className="text-gray-400">Human-like emotional delivery</p>
                 </div>
               </div>
@@ -377,23 +351,23 @@ const Index = () => {
               <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-8 border border-gray-700">
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3 mb-6">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-white/60 rounded-full"></div>
+                    <div className="w-3 h-3 bg-white/40 rounded-full"></div>
+                    <div className="w-3 h-3 bg-white/80 rounded-full"></div>
                     <span className="text-sm text-gray-400 ml-4">Live Processing</span>
                   </div>
                   
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                      <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                       <span className="text-sm text-gray-300">Audio Input Processing...</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                      <div className="w-2 h-2 bg-white rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
                       <span className="text-sm text-gray-300">Language Detection...</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                      <div className="w-2 h-2 bg-white rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
                       <span className="text-sm text-gray-300">Translation & Synthesis...</span>
                     </div>
                   </div>
@@ -431,9 +405,9 @@ const Index = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-8 md:mb-0">
               <img 
-                src="/lovable-uploads/7efd4121-aa13-4fa8-871e-7bb35cf9d587.png" 
+                src="/lovable-uploads/c7a10dcb-5d79-4ef7-a5ad-39163f662bd4.png" 
                 alt="Nihki" 
-                className="h-10 w-auto filter brightness-0 invert"
+                className="h-10 w-auto"
               />
             </div>
             <div className="flex space-x-8 text-gray-400">
