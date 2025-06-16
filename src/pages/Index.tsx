@@ -11,14 +11,14 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Navigation */}
-      <nav className="fixed top-0 z-40 w-full bg-black/80 backdrop-blur-xl border-b border-gray-800">
+      <nav className="fixed top-0 z-40 w-full bg-black/90 backdrop-blur-xl border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <img 
-                src="/lovable-uploads/c7a10dcb-5d79-4ef7-a5ad-39163f662bd4.png" 
-                alt="Nihki Logo" 
-                className="h-10 w-auto"
+                src="/lovable-uploads/7efd4121-aa13-4fa8-871e-7bb35cf9d587.png" 
+                alt="Nihki" 
+                className="h-12 w-auto filter brightness-0 invert"
               />
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -27,7 +27,7 @@ const Index = () => {
               <a href="#technology" className="text-gray-300 hover:text-white transition-colors">Technology</a>
               <Button 
                 onClick={() => setShowDemoForm(true)}
-                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
+                className="bg-white text-black hover:bg-gray-200 border-2 border-white"
               >
                 Try Demo
               </Button>
@@ -36,40 +36,45 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section - Full Height with Parallax */}
+      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Animated Background */}
+        {/* Animated Background Effects */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-white/3 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/7 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+          
+          {/* Grid Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="h-full w-full bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+          </div>
         </div>
         
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 mb-8 animate-fade-in">
-            <Zap className="w-5 h-5 mr-2 text-blue-400" />
-            <span className="text-blue-300">Revolutionary AI Interpretation</span>
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 border border-white/20 mb-8 animate-fade-in backdrop-blur-xl">
+            <Zap className="w-5 h-5 mr-2 text-white" />
+            <span className="text-white/90">Real-Time Speech Interpretation</span>
           </div>
           
           <h1 className="text-6xl md:text-8xl font-black mb-6 leading-tight">
-            <span className="block">BREAK</span>
-            <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              LANGUAGE
+            <span className="block">SPEAK</span>
+            <span className="block bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
+              ANY
             </span>
-            <span className="block">BARRIERS</span>
+            <span className="block">LANGUAGE</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Real-time AI interpretation that feels <em className="text-blue-400">human</em>
+            AI that interprets <em className="text-white">conversations</em>, not just words
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button 
               size="lg" 
               onClick={() => setShowDemoForm(true)}
-              className="text-xl px-10 py-6 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300"
+              className="text-xl px-10 py-6 bg-white text-black hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 border-2 border-white"
             >
-              Experience the Magic
+              Experience Live Demo
               <ArrowRight className="ml-3 w-6 h-6" />
             </Button>
           </div>
@@ -77,144 +82,199 @@ const Index = () => {
         
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
+          <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/40 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
 
-      {/* Live Conference Interpretation Showcase */}
+      {/* Live Interpretation Showcase - Redesigned */}
       <section id="demo" className="relative py-32 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-6">
-              Live <span className="text-blue-400">Conference</span> Interpretation
+              Watch <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Conversations</span> Flow
             </h2>
-            <p className="text-xl text-gray-400">Watch seamless multilingual conversations unfold in real-time</p>
+            <p className="text-xl text-gray-400">Live interpretation across languages in real-time</p>
           </div>
 
           <div className="relative max-w-6xl mx-auto">
-            {/* Conference Room Simulation */}
-            <div className="bg-gray-900/50 backdrop-blur-xl rounded-3xl p-8 border border-gray-700">
+            {/* Main Demo Container */}
+            <div className="bg-black/60 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl">
+              
+              {/* Live Indicator */}
               <div className="flex justify-between items-center mb-8">
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                  <span className="text-red-400 font-semibold">LIVE</span>
-                  <span className="text-gray-400">International Business Meeting</span>
+                  <div className="relative">
+                    <div className="w-4 h-4 bg-white rounded-full animate-ping absolute"></div>
+                    <div className="w-4 h-4 bg-white rounded-full"></div>
+                  </div>
+                  <span className="text-white font-bold text-lg">LIVE INTERPRETATION</span>
                 </div>
                 <div className="flex items-center space-x-2 text-sm text-gray-400">
                   <Users className="w-4 h-4" />
-                  <span>4 participants • 3 languages</span>
+                  <span>Global Team Meeting</span>
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8">
-                {/* Left side - Speakers */}
+              {/* Split Screen Demo */}
+              <div className="grid lg:grid-cols-2 gap-8">
+                
+                {/* Left Side - Speakers */}
                 <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-white font-bold">🇺🇸</span>
-                    </div>
-                    <div className="flex-1">
-                      <div className="bg-blue-500/20 rounded-2xl p-4 border border-blue-500/30 relative">
-                        <div className="flex items-center space-x-2 mb-2">
-                          <MicIcon className="w-4 h-4 text-blue-400 animate-pulse" />
-                          <span className="text-xs text-blue-400 font-semibold">Sarah (CEO)</span>
-                        </div>
-                        <p className="text-sm">"Let's discuss the Q4 projections and how they align with our European expansion strategy..."</p>
-                      </div>
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-6 text-center">What They Say</h3>
                   
-                  <div className="flex items-start space-x-4">
-                    <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-white font-bold">🇪🇸</span>
-                    </div>
-                    <div className="flex-1">
-                      <div className="bg-green-500/20 rounded-2xl p-4 border border-green-500/30">
-                        <div className="flex items-center space-x-2 mb-2">
-                          <MicIcon className="w-4 h-4 text-green-400 animate-pulse" />
-                          <span className="text-xs text-green-400 font-semibold">Carlos (Director)</span>
+                  {/* Speaker 1 - English */}
+                  <div className="relative">
+                    <div className="absolute -left-2 top-0 w-1 h-full bg-white rounded-full animate-pulse"></div>
+                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 ml-4">
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                          <span className="text-white font-bold text-lg">🇺🇸</span>
                         </div>
-                        <p className="text-sm">"Me parece excelente la propuesta, pero necesitamos considerar las regulaciones locales..."</p>
+                        <div>
+                          <div className="text-white font-semibold">Sarah Chen</div>
+                          <div className="text-gray-400 text-sm">Product Manager, San Francisco</div>
+                        </div>
+                        <div className="ml-auto">
+                          <div className="flex items-center space-x-1">
+                            <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                            <div className="w-2 h-2 bg-white/60 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                            <div className="w-2 h-2 bg-white/30 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                          </div>
+                        </div>
                       </div>
+                      <p className="text-white/90 text-lg leading-relaxed">
+                        "I think we should prioritize the European market expansion for Q2. The demand metrics are showing really promising growth patterns..."
+                      </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4">
-                    <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-white font-bold">🇫🇷</span>
-                    </div>
-                    <div className="flex-1">
-                      <div className="bg-purple-500/20 rounded-2xl p-4 border border-purple-500/30">
-                        <div className="flex items-center space-x-2 mb-2">
-                          <MicIcon className="w-4 h-4 text-purple-400 animate-pulse" />
-                          <span className="text-xs text-purple-400 font-semibold">Marie (Partner)</span>
+                  {/* Speaker 2 - Spanish */}
+                  <div className="relative">
+                    <div className="absolute -left-2 top-0 w-1 h-full bg-white rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 ml-4">
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                          <span className="text-white font-bold text-lg">🇪🇸</span>
                         </div>
-                        <p className="text-sm">"Tout à fait d'accord avec Carlos. Nous devons aussi analyser l'impact sur nos équipes..."</p>
+                        <div>
+                          <div className="text-white font-semibold">Carlos Rodriguez</div>
+                          <div className="text-gray-400 text-sm">Sales Director, Madrid</div>
+                        </div>
+                        <div className="ml-auto">
+                          <div className="flex items-center space-x-1">
+                            <div className="w-2 h-2 bg-white rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+                            <div className="w-2 h-2 bg-white/60 rounded-full animate-pulse" style={{animationDelay: '2.2s'}}></div>
+                            <div className="w-2 h-2 bg-white/30 rounded-full animate-pulse" style={{animationDelay: '2.4s'}}></div>
+                          </div>
+                        </div>
                       </div>
+                      <p className="text-white/90 text-lg leading-relaxed">
+                        "Estoy completamente de acuerdo, Sarah. Pero también deberíamos considerar las diferencias culturales en nuestro approach de marketing..."
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Speaker 3 - French */}
+                  <div className="relative">
+                    <div className="absolute -left-2 top-0 w-1 h-full bg-white rounded-full animate-pulse" style={{animationDelay: '4s'}}></div>
+                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 ml-4">
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                          <span className="text-white font-bold text-lg">🇫🇷</span>
+                        </div>
+                        <div>
+                          <div className="text-white font-semibold">Marie Dubois</div>
+                          <div className="text-gray-400 text-sm">Regional Manager, Paris</div>
+                        </div>
+                        <div className="ml-auto">
+                          <div className="flex items-center space-x-1">
+                            <div className="w-2 h-2 bg-white rounded-full animate-pulse" style={{animationDelay: '4s'}}></div>
+                            <div className="w-2 h-2 bg-white/60 rounded-full animate-pulse" style={{animationDelay: '4.2s'}}></div>
+                            <div className="w-2 h-2 bg-white/30 rounded-full animate-pulse" style={{animationDelay: '4.4s'}}></div>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-white/90 text-lg leading-relaxed">
+                        "Excellente observation, Carlos. Je propose qu'on établisse une task force pour analyser ces spécificités régionales..."
+                      </p>
                     </div>
                   </div>
                 </div>
 
-                {/* Right side - AI Processing */}
+                {/* Right Side - AI Processing & Output */}
                 <div className="space-y-6">
-                  <div className="bg-gray-800/50 rounded-2xl p-6 border border-gray-600">
+                  <h3 className="text-xl font-semibold text-white mb-6 text-center">What Everyone Hears</h3>
+                  
+                  {/* AI Processing Center */}
+                  <div className="bg-gradient-to-r from-white/10 to-white/5 rounded-2xl p-6 border border-white/20 mb-6">
                     <div className="flex items-center space-x-3 mb-4">
-                      <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center">
-                        <Zap className="w-4 h-4 text-white" />
+                      <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                        <Zap className="w-5 h-5 text-black" />
                       </div>
-                      <span className="font-semibold text-cyan-400">Nihki AI Processing</span>
+                      <span className="font-bold text-white text-lg">Nihki AI Processing</span>
                     </div>
                     
                     <div className="space-y-3">
-                      <div className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-                        <span className="text-xs text-gray-300">Real-time speech recognition</span>
+                      <div className="flex items-center space-x-3">
+                        <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+                        <span className="text-sm text-white/80">Speech Recognition</span>
+                        <div className="flex-1 h-1 bg-white/20 rounded">
+                          <div className="h-1 bg-white rounded animate-pulse w-full"></div>
+                        </div>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '0.3s'}}></div>
-                        <span className="text-xs text-gray-300">Context-aware translation</span>
+                      <div className="flex items-center space-x-3">
+                        <div className="w-3 h-3 bg-white rounded-full animate-pulse" style={{animationDelay: '0.3s'}}></div>
+                        <span className="text-sm text-white/80">Context Analysis</span>
+                        <div className="flex-1 h-1 bg-white/20 rounded">
+                          <div className="h-1 bg-white rounded animate-pulse w-4/5" style={{animationDelay: '0.3s'}}></div>
+                        </div>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.6s'}}></div>
-                        <span className="text-xs text-gray-300">Natural voice synthesis</span>
+                      <div className="flex items-center space-x-3">
+                        <div className="w-3 h-3 bg-white rounded-full animate-pulse" style={{animationDelay: '0.6s'}}></div>
+                        <span className="text-sm text-white/80">Voice Synthesis</span>
+                        <div className="flex-1 h-1 bg-white/20 rounded">
+                          <div className="h-1 bg-white rounded animate-pulse w-3/4" style={{animationDelay: '0.6s'}}></div>
+                        </div>
                       </div>
                     </div>
                   </div>
 
+                  {/* Interpreted Output */}
                   <div className="space-y-4">
-                    <div className="bg-gray-800/30 rounded-xl p-4 border border-gray-600">
+                    <div className="bg-black/40 rounded-xl p-4 border border-white/10">
                       <div className="flex items-center space-x-2 mb-2">
-                        <Headphones className="w-4 h-4 text-blue-400" />
-                        <span className="text-xs text-blue-400 font-semibold">For Spanish Speaker</span>
+                        <Headphones className="w-4 h-4 text-white" />
+                        <span className="text-xs text-white font-semibold">Spanish → English/French</span>
                       </div>
-                      <p className="text-sm text-gray-200">"Discutamos las proyecciones del Q4 y cómo se alinean con nuestra estrategia de expansión europea..."</p>
+                      <p className="text-sm text-white/90">"I completely agree, Sarah. But we should also consider cultural differences in our marketing approach..."</p>
                     </div>
 
-                    <div className="bg-gray-800/30 rounded-xl p-4 border border-gray-600">
+                    <div className="bg-black/40 rounded-xl p-4 border border-white/10">
                       <div className="flex items-center space-x-2 mb-2">
-                        <Headphones className="w-4 h-4 text-green-400" />
-                        <span className="text-xs text-green-400 font-semibold">For English Speaker</span>
+                        <Headphones className="w-4 h-4 text-white" />
+                        <span className="text-xs text-white font-semibold">French → English/Spanish</span>
                       </div>
-                      <p className="text-sm text-gray-200">"The proposal seems excellent to me, but we need to consider local regulations..."</p>
+                      <p className="text-sm text-white/90">"Excellent observation, Carlos. I suggest we establish a task force to analyze these regional specificities..."</p>
                     </div>
 
-                    <div className="bg-gray-800/30 rounded-xl p-4 border border-gray-600">
+                    <div className="bg-black/40 rounded-xl p-4 border border-white/10">
                       <div className="flex items-center space-x-2 mb-2">
-                        <Headphones className="w-4 h-4 text-purple-400" />
-                        <span className="text-xs text-purple-400 font-semibold">For French Speaker</span>
+                        <Headphones className="w-4 h-4 text-white" />
+                        <span className="text-xs text-white font-semibold">English → Spanish/French</span>
                       </div>
-                      <p className="text-sm text-gray-200">"I completely agree with Carlos. We must also analyze the impact on our teams..."</p>
+                      <p className="text-sm text-white/90">"Creo que deberíamos priorizar la expansión del mercado europeo para Q2..."</p>
                     </div>
                   </div>
                 </div>
               </div>
 
+              {/* Success Indicator */}
               <div className="mt-8 text-center">
-                <div className="inline-flex items-center space-x-2 px-4 py-2 bg-green-500/20 rounded-full border border-green-500/30">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-sm text-green-400 font-semibold">All participants understand each other perfectly</span>
+                <div className="inline-flex items-center space-x-2 px-6 py-3 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
+                  <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+                  <span className="text-sm text-white font-semibold">Perfect understanding across all languages</span>
                 </div>
               </div>
             </div>
@@ -222,7 +282,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Grid - More Visual */}
+      {/* Features Grid */}
       <section id="features" className="py-32 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -345,19 +405,19 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="py-32 bg-gradient-to-r from-white to-gray-200 relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-5xl font-bold mb-8">
+          <h2 className="text-5xl font-bold mb-8 text-black">
             Ready to Transform Communication?
           </h2>
-          <p className="text-xl mb-12 text-blue-100">
+          <p className="text-xl mb-12 text-gray-800">
             Join the future of seamless global conversation
           </p>
           <Button 
             size="lg" 
             onClick={() => setShowDemoForm(true)}
-            className="text-xl px-12 py-6 bg-white text-gray-900 hover:bg-gray-100 transform hover:scale-105 transition-all duration-300"
+            className="text-xl px-12 py-6 bg-black text-white hover:bg-gray-800 transform hover:scale-105 transition-all duration-300 border-2 border-black"
           >
             Experience Nihki Now
             <ArrowRight className="ml-3 w-6 h-6" />
@@ -366,14 +426,14 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 py-16 border-t border-gray-800">
+      <footer className="bg-black py-16 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-8 md:mb-0">
               <img 
-                src="/lovable-uploads/c7a10dcb-5d79-4ef7-a5ad-39163f662bd4.png" 
-                alt="Nihki Logo" 
-                className="h-10 w-auto"
+                src="/lovable-uploads/7efd4121-aa13-4fa8-871e-7bb35cf9d587.png" 
+                alt="Nihki" 
+                className="h-10 w-auto filter brightness-0 invert"
               />
             </div>
             <div className="flex space-x-8 text-gray-400">
@@ -382,7 +442,7 @@ const Index = () => {
               <a href="#" className="hover:text-white transition-colors">Contact</a>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+          <div className="border-t border-white/10 mt-12 pt-8 text-center text-gray-400">
             <p>© 2024 Nihki. Breaking barriers, building bridges.</p>
           </div>
         </div>
