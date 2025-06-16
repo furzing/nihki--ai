@@ -3,31 +3,21 @@ import { ArrowRight, Mic, Globe, Zap, Users, Languages, Clock, Star, Play, Volum
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import DemoRequestForm from "@/components/DemoRequestForm";
-
 const Index = () => {
   const [showDemoForm, setShowDemoForm] = useState(false);
-
-  return (
-    <div className="min-h-screen bg-white text-black overflow-x-hidden">
+  return <div className="min-h-screen bg-white text-black overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 z-40 w-full bg-white/90 backdrop-blur-xl border-b border-black/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <img 
-                src="/lovable-uploads/7efd4121-aa13-4fa8-871e-7bb35cf9d587.png" 
-                alt="Nihki" 
-                className="h-12 w-auto"
-              />
+              <img alt="Nihki" className="h-12 w-auto" src="/lovable-uploads/700367a1-438b-472b-97b6-dd82762bf7bb.png" />
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <a href="#demo" className="text-gray-700 hover:text-black transition-colors">Demo</a>
               <a href="#features" className="text-gray-700 hover:text-black transition-colors">Features</a>
               <a href="#technology" className="text-gray-700 hover:text-black transition-colors">Technology</a>
-              <Button 
-                onClick={() => setShowDemoForm(true)}
-                className="bg-black text-white hover:bg-gray-800 border-2 border-black"
-              >
+              <Button onClick={() => setShowDemoForm(true)} className="bg-black text-white hover:bg-gray-800 border-2 border-black">
                 Try Demo
               </Button>
             </div>
@@ -40,14 +30,12 @@ const Index = () => {
         {/* Animated Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-black/5 rounded-full blur-3xl animate-pulse"></div>
-          <div 
-            className="absolute bottom-20 right-10 w-96 h-96 bg-black/3 rounded-full blur-3xl animate-pulse" 
-            style={{ animationDelay: '1s' }}
-          ></div>
-          <div 
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-black/7 rounded-full blur-3xl animate-pulse" 
-            style={{ animationDelay: '2s' }}
-          ></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-black/3 rounded-full blur-3xl animate-pulse" style={{
+          animationDelay: '1s'
+        }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-black/7 rounded-full blur-3xl animate-pulse" style={{
+          animationDelay: '2s'
+        }}></div>
           
           {/* Grid Pattern */}
           <div className="absolute inset-0 opacity-5">
@@ -56,10 +44,7 @@ const Index = () => {
         </div>
         
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-black/10 border border-black/20 mb-8 animate-fade-in backdrop-blur-xl">
-            <Zap className="w-5 h-5 mr-2 text-black" />
-            <span className="text-black/90">Real-Time Speech Interpretation</span>
-          </div>
+          
           
           <h1 className="text-6xl md:text-8xl font-black mb-6 leading-tight">
             <span className="block">SPEAK</span>
@@ -72,11 +57,7 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button 
-              size="lg" 
-              onClick={() => setShowDemoForm(true)}
-              className="text-xl px-10 py-6 bg-black text-white hover:bg-gray-800 transform hover:scale-105 transition-all duration-300 border-2 border-black"
-            >
+            <Button size="lg" onClick={() => setShowDemoForm(true)} className="text-xl px-10 py-6 bg-black text-white hover:bg-gray-800 transform hover:scale-105 transition-all duration-300 border-2 border-black">
               Experience Live Demo
               <ArrowRight className="ml-3 w-6 h-6" />
             </Button>
@@ -130,7 +111,9 @@ const Index = () => {
                   <span>47 minutes elapsed</span>
                 </div>
                 <div className="w-full bg-black/10 rounded-full h-2">
-                  <div className="bg-black h-2 rounded-full animate-pulse" style={{ width: '68%' }}></div>
+                  <div className="bg-black h-2 rounded-full animate-pulse" style={{
+                  width: '68%'
+                }}></div>
                 </div>
               </div>
 
@@ -150,9 +133,15 @@ const Index = () => {
                       </div>
                       <div className="flex items-center space-x-1">
                         <div className="w-2 h-8 bg-black/80 rounded animate-pulse"></div>
-                        <div className="w-2 h-6 bg-black/60 rounded animate-pulse" style={{ animationDelay: '0.1s' }}></div>
-                        <div className="w-2 h-10 bg-black/90 rounded animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                        <div className="w-2 h-4 bg-black/40 rounded animate-pulse" style={{ animationDelay: '0.3s' }}></div>
+                        <div className="w-2 h-6 bg-black/60 rounded animate-pulse" style={{
+                        animationDelay: '0.1s'
+                      }}></div>
+                        <div className="w-2 h-10 bg-black/90 rounded animate-pulse" style={{
+                        animationDelay: '0.2s'
+                      }}></div>
+                        <div className="w-2 h-4 bg-black/40 rounded animate-pulse" style={{
+                        animationDelay: '0.3s'
+                      }}></div>
                       </div>
                     </div>
                     <div className="bg-black/10 backdrop-blur-sm rounded-2xl p-6 border border-black/20">
@@ -169,8 +158,12 @@ const Index = () => {
                         <span className="text-sm text-black font-bold">AI PROCESSING</span>
                         <div className="flex space-x-1">
                           <div className="w-1 h-1 bg-black rounded-full animate-pulse"></div>
-                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{
+                          animationDelay: '0.2s'
+                        }}></div>
+                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{
+                          animationDelay: '0.4s'
+                        }}></div>
                         </div>
                       </div>
                     </div>
@@ -201,8 +194,12 @@ const Index = () => {
                 <div className="flex items-center justify-center py-6">
                   <div className="flex space-x-2">
                     <div className="w-3 h-3 bg-black/60 rounded-full animate-pulse"></div>
-                    <div className="w-3 h-3 bg-black/40 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                    <div className="w-3 h-3 bg-black/60 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                    <div className="w-3 h-3 bg-black/40 rounded-full animate-pulse" style={{
+                    animationDelay: '0.2s'
+                  }}></div>
+                    <div className="w-3 h-3 bg-black/60 rounded-full animate-pulse" style={{
+                    animationDelay: '0.4s'
+                  }}></div>
                   </div>
                 </div>
 
@@ -218,9 +215,15 @@ const Index = () => {
                         <div className="text-gray-600">Speaking in Spanish</div>
                       </div>
                       <div className="flex items-center space-x-1">
-                        <div className="w-2 h-7 bg-black/70 rounded animate-pulse" style={{ animationDelay: '2s' }}></div>
-                        <div className="w-2 h-9 bg-black/90 rounded animate-pulse" style={{ animationDelay: '2.1s' }}></div>
-                        <div className="w-2 h-5 bg-black/50 rounded animate-pulse" style={{ animationDelay: '2.2s' }}></div>
+                        <div className="w-2 h-7 bg-black/70 rounded animate-pulse" style={{
+                        animationDelay: '2s'
+                      }}></div>
+                        <div className="w-2 h-9 bg-black/90 rounded animate-pulse" style={{
+                        animationDelay: '2.1s'
+                      }}></div>
+                        <div className="w-2 h-5 bg-black/50 rounded animate-pulse" style={{
+                        animationDelay: '2.2s'
+                      }}></div>
                       </div>
                     </div>
                     <div className="bg-black/10 backdrop-blur-sm rounded-2xl p-6 border border-black/20">
@@ -233,12 +236,20 @@ const Index = () => {
                   <div className="space-y-4">
                     <div className="flex items-center justify-center mb-6">
                       <div className="flex items-center space-x-3 px-6 py-3 bg-black/20 rounded-full border border-black/30 backdrop-blur-sm">
-                        <Zap className="w-5 h-5 text-black animate-pulse" style={{ animationDelay: '2s' }} />
+                        <Zap className="w-5 h-5 text-black animate-pulse" style={{
+                        animationDelay: '2s'
+                      }} />
                         <span className="text-sm text-black font-bold">AI PROCESSING</span>
                         <div className="flex space-x-1">
-                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
-                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{ animationDelay: '2.2s' }}></div>
-                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{ animationDelay: '2.4s' }}></div>
+                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{
+                          animationDelay: '2s'
+                        }}></div>
+                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{
+                          animationDelay: '2.2s'
+                        }}></div>
+                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{
+                          animationDelay: '2.4s'
+                        }}></div>
                         </div>
                       </div>
                     </div>
@@ -247,7 +258,9 @@ const Index = () => {
                       <div className="flex items-center space-x-2 mb-3">
                         <Headphones className="w-4 h-4 text-black" />
                         <span className="text-xs text-black/80 font-semibold">→ English (Sarah)</span>
-                        <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+                        <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse" style={{
+                        animationDelay: '2s'
+                      }}></div>
                       </div>
                       <p className="text-black/90">"I completely agree, Sarah. However, we should also consider the specific cultural differences of each European region..."</p>
                     </div>
@@ -256,7 +269,9 @@ const Index = () => {
                       <div className="flex items-center space-x-2 mb-3">
                         <Headphones className="w-4 h-4 text-black" />
                         <span className="text-xs text-black/80 font-semibold">→ French (Marie)</span>
-                        <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+                        <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse" style={{
+                        animationDelay: '2s'
+                      }}></div>
                       </div>
                       <p className="text-black/90">"Je suis complètement d'accord, Sarah. Cependant, nous devrions aussi considérer les différences culturelles spécifiques..."</p>
                     </div>
@@ -410,37 +425,17 @@ const Index = () => {
           <h2 className="text-5xl font-bold mb-6 text-black">
             Ready to Break <span className="text-black">Language Barriers?</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-12">
-            Experience the future of real-time interpretation. Join thousands of businesses already using Nihki.
-          </p>
+          <p className="text-xl text-gray-600 mb-12">Experience the future of real-time interpretation
+Speak to the world using Nihki.</p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button 
-              size="lg" 
-              onClick={() => setShowDemoForm(true)}
-              className="text-xl px-12 py-6 bg-black text-white hover:bg-gray-800 transform hover:scale-105 transition-all duration-300"
-            >
-              Start Free Trial
-              <ArrowRight className="ml-3 w-6 h-6" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="text-xl px-12 py-6 border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300"
-            >
-              Schedule Demo
-            </Button>
+            
+            <Button size="lg" variant="outline" className="text-xl px-12 py-6 border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300">Contact us for a Demo</Button>
           </div>
 
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-black mb-2">10K+</div>
-              <div className="text-gray-600">Active Users</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-black mb-2">50+</div>
-              <div className="text-gray-600">Languages</div>
-            </div>
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center px-[36px]">
+            
+            
             <div>
               <div className="text-4xl font-bold text-black mb-2">99.8%</div>
               <div className="text-gray-600">Accuracy</div>
@@ -454,11 +449,7 @@ const Index = () => {
       </section>
 
       {/* Demo Form Modal */}
-      {showDemoForm && (
-        <DemoRequestForm onClose={() => setShowDemoForm(false)} />
-      )}
-    </div>
-  );
+      {showDemoForm && <DemoRequestForm onClose={() => setShowDemoForm(false)} />}
+    </div>;
 };
-
 export default Index;
