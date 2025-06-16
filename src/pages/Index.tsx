@@ -41,8 +41,14 @@ const Index = () => {
         {/* Animated Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-white/3 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/7 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div 
+            className="absolute bottom-20 right-10 w-96 h-96 bg-white/3 rounded-full blur-3xl animate-pulse" 
+            style={{ animationDelay: '1s' }}
+          ></div>
+          <div 
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/7 rounded-full blur-3xl animate-pulse" 
+            style={{ animationDelay: '2s' }}
+          ></div>
           
           {/* Grid Pattern */}
           <div className="absolute inset-0 opacity-5">
@@ -58,9 +64,7 @@ const Index = () => {
           
           <h1 className="text-6xl md:text-8xl font-black mb-6 leading-tight">
             <span className="block">SPEAK</span>
-            <span className="block bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
-              ANY
-            </span>
+            <span className="block text-white">ANY</span>
             <span className="block">LANGUAGE</span>
           </h1>
           
@@ -98,9 +102,7 @@ const Index = () => {
             </div>
             <h2 className="text-5xl md:text-6xl font-black mb-6 text-white">
               MULTILINGUAL 
-              <span className="block bg-gradient-to-r from-white via-gray-400 to-white bg-clip-text text-transparent">
-                CONFERENCE
-              </span>
+              <span className="block text-white">CONFERENCE</span>
               <span className="block">LIVE NOW</span>
             </h2>
             <p className="text-xl text-gray-400 mb-8">Real business meeting happening across 3 languages simultaneously</p>
@@ -129,7 +131,7 @@ const Index = () => {
                   <span>47 minutes elapsed</span>
                 </div>
                 <div className="w-full bg-white/10 rounded-full h-2">
-                  <div className="bg-white h-2 rounded-full animate-pulse" style={{width: '68%'}}></div>
+                  <div className="bg-white h-2 rounded-full animate-pulse" style={{ width: '68%' }}></div>
                 </div>
               </div>
 
@@ -149,9 +151,9 @@ const Index = () => {
                       </div>
                       <div className="flex items-center space-x-1">
                         <div className="w-2 h-8 bg-white/80 rounded animate-pulse"></div>
-                        <div className="w-2 h-6 bg-white/60 rounded animate-pulse" style={{animationDelay: '0.1s'}}></div>
-                        <div className="w-2 h-10 bg-white/90 rounded animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                        <div className="w-2 h-4 bg-white/40 rounded animate-pulse" style={{animationDelay: '0.3s'}}></div>
+                        <div className="w-2 h-6 bg-white/60 rounded animate-pulse" style={{ animationDelay: '0.1s' }}></div>
+                        <div className="w-2 h-10 bg-white/90 rounded animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                        <div className="w-2 h-4 bg-white/40 rounded animate-pulse" style={{ animationDelay: '0.3s' }}></div>
                       </div>
                     </div>
                     <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
@@ -168,8 +170,8 @@ const Index = () => {
                         <span className="text-sm text-white font-bold">AI PROCESSING</span>
                         <div className="flex space-x-1">
                           <div className="w-1 h-1 bg-white rounded-full animate-pulse"></div>
-                          <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                          <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                          <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                          <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
                         </div>
                       </div>
                     </div>
@@ -200,8 +202,8 @@ const Index = () => {
                 <div className="flex items-center justify-center py-6">
                   <div className="flex space-x-2">
                     <div className="w-3 h-3 bg-white/60 rounded-full animate-pulse"></div>
-                    <div className="w-3 h-3 bg-white/40 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                    <div className="w-3 h-3 bg-white/60 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                    <div className="w-3 h-3 bg-white/40 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                    <div className="w-3 h-3 bg-white/60 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
                   </div>
                 </div>
 
@@ -217,9 +219,9 @@ const Index = () => {
                         <div className="text-gray-400">Speaking in Spanish</div>
                       </div>
                       <div className="flex items-center space-x-1">
-                        <div className="w-2 h-7 bg-white/70 rounded animate-pulse" style={{animationDelay: '2s'}}></div>
-                        <div className="w-2 h-9 bg-white/90 rounded animate-pulse" style={{animationDelay: '2.1s'}}></div>
-                        <div className="w-2 h-5 bg-white/50 rounded animate-pulse" style={{animationDelay: '2.2s'}}></div>
+                        <div className="w-2 h-7 bg-white/70 rounded animate-pulse" style={{ animationDelay: '2s' }}></div>
+                        <div className="w-2 h-9 bg-white/90 rounded animate-pulse" style={{ animationDelay: '2.1s' }}></div>
+                        <div className="w-2 h-5 bg-white/50 rounded animate-pulse" style={{ animationDelay: '2.2s' }}></div>
                       </div>
                     </div>
                     <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
@@ -232,12 +234,12 @@ const Index = () => {
                   <div className="space-y-4">
                     <div className="flex items-center justify-center mb-6">
                       <div className="flex items-center space-x-3 px-6 py-3 bg-white/20 rounded-full border border-white/30 backdrop-blur-sm">
-                        <Zap className="w-5 h-5 text-white animate-pulse" style={{animationDelay: '2s'}} />
+                        <Zap className="w-5 h-5 text-white animate-pulse" style={{ animationDelay: '2s' }} />
                         <span className="text-sm text-white font-bold">AI PROCESSING</span>
                         <div className="flex space-x-1">
-                          <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
-                          <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{animationDelay: '2.2s'}}></div>
-                          <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{animationDelay: '2.4s'}}></div>
+                          <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+                          <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{ animationDelay: '2.2s' }}></div>
+                          <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{ animationDelay: '2.4s' }}></div>
                         </div>
                       </div>
                     </div>
@@ -246,7 +248,7 @@ const Index = () => {
                       <div className="flex items-center space-x-2 mb-3">
                         <Headphones className="w-4 h-4 text-white" />
                         <span className="text-xs text-white/80 font-semibold">→ English (Sarah)</span>
-                        <div className="ml-auto w-2 h-2 bg-white rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+                        <div className="ml-auto w-2 h-2 bg-white rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
                       </div>
                       <p className="text-white/90">"I completely agree, Sarah. However, we should also consider the specific cultural differences of each European region..."</p>
                     </div>
@@ -255,7 +257,7 @@ const Index = () => {
                       <div className="flex items-center space-x-2 mb-3">
                         <Headphones className="w-4 h-4 text-white" />
                         <span className="text-xs text-white/80 font-semibold">→ French (Marie)</span>
-                        <div className="ml-auto w-2 h-2 bg-white rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+                        <div className="ml-auto w-2 h-2 bg-white rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
                       </div>
                       <p className="text-white/90">"Je suis complètement d'accord, Sarah. Cependant, nous devrions aussi considérer les différences culturelles spécifiques..."</p>
                     </div>
@@ -288,7 +290,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold mb-6">
-              Beyond <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Translation</span>
+              Beyond <span className="text-white">Translation</span>
             </h2>
             <p className="text-xl text-gray-400">AI that understands context, emotion, and culture</p>
           </div>
@@ -337,7 +339,7 @@ const Index = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold mb-6">
-              Powered by <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Advanced AI</span>
+              Powered by <span className="text-white">Advanced AI</span>
             </h2>
           </div>
 
@@ -390,11 +392,11 @@ const Index = () => {
                       <span className="text-sm text-gray-300">Audio Input Processing...</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-white rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                      <div className="w-2 h-2 bg-white rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
                       <span className="text-sm text-gray-300">Language Detection...</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-white rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                      <div className="w-2 h-2 bg-white rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
                       <span className="text-sm text-gray-300">Translation & Synthesis...</span>
                     </div>
                   </div>
