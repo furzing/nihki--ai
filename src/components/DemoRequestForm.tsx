@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { X, Send } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 interface DemoRequestFormProps {
   onClose: () => void;
@@ -18,14 +19,46 @@ const DemoRequestForm = ({ onClose }: DemoRequestFormProps) => {
     email: "",
     testScenario: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Demo request submitted:", formData);
-    // Show success message and close form
-    alert("Thank you! We'll get back to you as soon as possible.");
-    onClose();
+    setIsSubmitting(true);
+
+    try {
+      // Simulate form processing
+      console.log("Demo request submitted:", formData);
+      
+      // Show success toast
+      toast({
+        title: "Demo Request Submitted!",
+        description: "Thank you for your interest. We'll contact you within 24 hours to schedule your live demo.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        company: "",
+        email: "",
+        testScenario: ""
+      });
+
+      // Close form after short delay
+      setTimeout(() => {
+        onClose();
+      }, 2000);
+
+    } catch (error) {
+      console.error("Error submitting demo request:", error);
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -42,6 +75,7 @@ const DemoRequestForm = ({ onClose }: DemoRequestFormProps) => {
           <button
             onClick={onClose}
             className="absolute right-4 top-4 p-1 rounded-full hover:bg-gray-100 transition-colors"
+            disabled={isSubmitting}
           >
             <X className="w-4 h-4" />
           </button>
@@ -63,6 +97,7 @@ const DemoRequestForm = ({ onClose }: DemoRequestFormProps) => {
                 onChange={handleChange}
                 required
                 placeholder="Your full name"
+                disabled={isSubmitting}
               />
             </div>
             <div>
@@ -74,6 +109,7 @@ const DemoRequestForm = ({ onClose }: DemoRequestFormProps) => {
                 onChange={handleChange}
                 required
                 placeholder="Your company name"
+                disabled={isSubmitting}
               />
             </div>
             <div>
@@ -86,6 +122,7 @@ const DemoRequestForm = ({ onClose }: DemoRequestFormProps) => {
                 onChange={handleChange}
                 required
                 placeholder="your.email@company.com"
+                disabled={isSubmitting}
               />
             </div>
             <div>
@@ -98,11 +135,16 @@ const DemoRequestForm = ({ onClose }: DemoRequestFormProps) => {
                 required
                 placeholder="Describe your use case (e.g., client interviews, international meetings, etc.)"
                 rows={3}
+                disabled={isSubmitting}
               />
             </div>
-            <Button type="submit" className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
+            <Button 
+              type="submit" 
+              className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+              disabled={isSubmitting}
+            >
               <Send className="w-4 h-4 mr-2" />
-              Request Demo
+              {isSubmitting ? "Submitting..." : "Request Demo"}
             </Button>
           </form>
         </CardContent>
