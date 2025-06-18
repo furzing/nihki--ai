@@ -6,14 +6,15 @@ import { useTranslation } from "@/hooks/useTranslation";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 import DemoRequestForm from "@/components/DemoRequestForm";
-
 const Index = () => {
   const [showDemoForm, setShowDemoForm] = useState(false);
-  const { t } = useTranslation();
-  const { isRTL } = useLanguage();
-
-  return (
-    <div className="min-h-screen bg-white text-black overflow-x-hidden">
+  const {
+    t
+  } = useTranslation();
+  const {
+    isRTL
+  } = useLanguage();
+  return <div className="min-h-screen bg-white text-black overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 z-40 w-full bg-white/90 backdrop-blur-xl border-b border-black/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,9 +57,9 @@ const Index = () => {
           
           
           <h1 className={`text-4xl sm:text-6xl md:text-8xl font-black mb-6 leading-tight ${isRTL ? 'leading-relaxed' : ''}`}>
-            <span className="block">{t('hero.speak')}</span>
-            <span className="block text-black">{t('hero.any')}</span>
-            <span className="block">{t('hero.language')}</span>
+            <span className="block py-0 my-0">{t('hero.speak')}</span>
+            <span className="block text-black py-0 my-0">{t('hero.any')}</span>
+            <span className="block my-[20px]">{t('hero.language')}</span>
           </h1>
           
           <p className={`text-lg sm:text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto ${isRTL ? 'leading-relaxed' : 'leading-relaxed'}`}>
@@ -120,7 +121,9 @@ const Index = () => {
                   <span>{t('demo.elapsed')}</span>
                 </div>
                 <div className="w-full bg-black/10 rounded-full h-2">
-                  <div className="bg-black h-2 rounded-full animate-pulse" style={{ width: '68%' }}></div>
+                  <div className="bg-black h-2 rounded-full animate-pulse" style={{
+                  width: '68%'
+                }}></div>
                 </div>
               </div>
 
@@ -140,9 +143,15 @@ const Index = () => {
                       </div>
                       <div className="flex items-center space-x-1">
                         <div className="w-2 h-8 bg-black/80 rounded animate-pulse"></div>
-                        <div className="w-2 h-6 bg-black/60 rounded animate-pulse" style={{ animationDelay: '0.1s' }}></div>
-                        <div className="w-2 h-10 bg-black/90 rounded animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                        <div className="w-2 h-4 bg-black/40 rounded animate-pulse" style={{ animationDelay: '0.3s' }}></div>
+                        <div className="w-2 h-6 bg-black/60 rounded animate-pulse" style={{
+                        animationDelay: '0.1s'
+                      }}></div>
+                        <div className="w-2 h-10 bg-black/90 rounded animate-pulse" style={{
+                        animationDelay: '0.2s'
+                      }}></div>
+                        <div className="w-2 h-4 bg-black/40 rounded animate-pulse" style={{
+                        animationDelay: '0.3s'
+                      }}></div>
                       </div>
                     </div>
                     <div className="bg-black/10 backdrop-blur-sm rounded-2xl p-6 border border-black/20">
@@ -159,8 +168,12 @@ const Index = () => {
                         <span className="text-sm text-black font-bold">{t('demo.aiProcessing')}</span>
                         <div className="flex space-x-1">
                           <div className="w-1 h-1 bg-black rounded-full animate-pulse"></div>
-                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{
+                          animationDelay: '0.2s'
+                        }}></div>
+                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{
+                          animationDelay: '0.4s'
+                        }}></div>
                         </div>
                       </div>
                     </div>
@@ -191,8 +204,12 @@ const Index = () => {
                 <div className="flex items-center justify-center py-6">
                   <div className="flex space-x-2">
                     <div className="w-3 h-3 bg-black/60 rounded-full animate-pulse"></div>
-                    <div className="w-3 h-3 bg-black/40 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                    <div className="w-3 h-3 bg-black/60 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                    <div className="w-3 h-3 bg-black/40 rounded-full animate-pulse" style={{
+                    animationDelay: '0.2s'
+                  }}></div>
+                    <div className="w-3 h-3 bg-black/60 rounded-full animate-pulse" style={{
+                    animationDelay: '0.4s'
+                  }}></div>
                   </div>
                 </div>
 
@@ -208,9 +225,15 @@ const Index = () => {
                         <div className="text-gray-600">{t('demo.speakingInSpanish')}</div>
                       </div>
                       <div className="flex items-center space-x-1">
-                        <div className="w-2 h-7 bg-black/70 rounded animate-pulse" style={{ animationDelay: '2s' }}></div>
-                        <div className="w-2 h-9 bg-black/90 rounded animate-pulse" style={{ animationDelay: '2.1s' }}></div>
-                        <div className="w-2 h-5 bg-black/50 rounded animate-pulse" style={{ animationDelay: '2.2s' }}></div>
+                        <div className="w-2 h-7 bg-black/70 rounded animate-pulse" style={{
+                        animationDelay: '2s'
+                      }}></div>
+                        <div className="w-2 h-9 bg-black/90 rounded animate-pulse" style={{
+                        animationDelay: '2.1s'
+                      }}></div>
+                        <div className="w-2 h-5 bg-black/50 rounded animate-pulse" style={{
+                        animationDelay: '2.2s'
+                      }}></div>
                       </div>
                     </div>
                     <div className="bg-black/10 backdrop-blur-sm rounded-2xl p-6 border border-black/20">
@@ -223,12 +246,20 @@ const Index = () => {
                   <div className="space-y-4">
                     <div className="flex items-center justify-center mb-6">
                       <div className="flex items-center space-x-3 px-6 py-3 bg-black/20 rounded-full border border-black/30 backdrop-blur-sm">
-                        <Zap className="w-5 h-5 text-black animate-pulse" style={{ animationDelay: '2s' }} />
+                        <Zap className="w-5 h-5 text-black animate-pulse" style={{
+                        animationDelay: '2s'
+                      }} />
                         <span className="text-sm text-black font-bold">{t('demo.aiProcessing')}</span>
                         <div className="flex space-x-1">
-                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
-                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{ animationDelay: '2.2s' }}></div>
-                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{ animationDelay: '2.4s' }}></div>
+                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{
+                          animationDelay: '2s'
+                        }}></div>
+                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{
+                          animationDelay: '2.2s'
+                        }}></div>
+                          <div className="w-1 h-1 bg-black rounded-full animate-pulse" style={{
+                          animationDelay: '2.4s'
+                        }}></div>
                         </div>
                       </div>
                     </div>
@@ -237,7 +268,9 @@ const Index = () => {
                       <div className="flex items-center space-x-2 mb-3">
                         <Headphones className="w-4 h-4 text-black" />
                         <span className="text-xs text-black/80 font-semibold">{t('demo.toEnglish')}</span>
-                        <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+                        <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse" style={{
+                        animationDelay: '2s'
+                      }}></div>
                       </div>
                       <p className="text-black/90">{t('demo.carlosTranslatedEn')}</p>
                     </div>
@@ -246,7 +279,9 @@ const Index = () => {
                       <div className="flex items-center space-x-2 mb-3">
                         <Headphones className="w-4 h-4 text-black" />
                         <span className="text-xs text-black/80 font-semibold">{t('demo.toFrench')}</span>
-                        <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+                        <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse" style={{
+                        animationDelay: '2s'
+                      }}></div>
                       </div>
                       <p className="text-black/90">{t('demo.carlosTranslatedFr')}</p>
                     </div>
@@ -425,8 +460,6 @@ const Index = () => {
 
       {/* Demo Form Modal */}
       {showDemoForm && <DemoRequestForm onClose={() => setShowDemoForm(false)} />}
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
