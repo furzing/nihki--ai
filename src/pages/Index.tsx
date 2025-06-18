@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowRight, Mic, Globe, Zap, Users, Languages, Clock, Star, Play, Volume2, MicIcon, Headphones, Radio } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,12 +9,32 @@ import DemoRequestForm from "@/components/DemoRequestForm";
 
 const Index = () => {
   const [showDemoForm, setShowDemoForm] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  
   const {
     t
   } = useTranslation();
   const {
     isRTL
   } = useLanguage();
+
+  // Interactive scroll and mouse tracking
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('mousemove', handleMouseMove);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return <div className="min-h-screen bg-white text-black overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 z-40 w-full bg-white/90 backdrop-blur-xl border-b border-black/10">
@@ -38,41 +58,117 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Enhanced Animated Background Effects with ECO theme */}
+        {/* Enhanced Interactive Animated Background Effects */}
         <div className="absolute inset-0">
-          {/* Floating voice waves */}
-          <div className="absolute top-20 left-10 w-72 h-72 bg-black/5 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-black/3 rounded-full blur-3xl animate-pulse" style={{
-          animationDelay: '1s'
-        }}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-black/7 rounded-full blur-3xl animate-pulse" style={{
-          animationDelay: '2s'
-        }}></div>
+          {/* Floating interactive voice waves that follow scroll */}
+          <div 
+            className="absolute w-72 h-72 bg-black/5 rounded-full blur-3xl interactive-float"
+            style={{
+              top: `${20 - scrollY * 0.05}%`,
+              left: `${10 + mousePosition.x * 0.01}%`,
+              transform: `translateX(${mousePosition.x * 0.02}px) translateY(${-scrollY * 0.1}px)`
+            }}
+          ></div>
+          <div 
+            className="absolute w-96 h-96 bg-black/3 rounded-full blur-3xl interactive-float floating-bubble-delayed"
+            style={{
+              bottom: `${20 + scrollY * 0.03}%`,
+              right: `${10 + mousePosition.y * 0.01}%`,
+              transform: `translateX(${-mousePosition.x * 0.015}px) translateY(${scrollY * 0.08}px)`
+            }}
+          ></div>
+          <div 
+            className="absolute w-64 h-64 bg-black/7 rounded-full blur-3xl speech-pulse"
+            style={{
+              top: '50%',
+              left: '50%',
+              transform: `translate(-50%, -50%) translateX(${mousePosition.x * 0.01}px) translateY(${mousePosition.y * 0.01}px)`
+            }}
+          ></div>
           
-          {/* Floating speech bubbles */}
-          <div className="absolute top-32 right-20 w-8 h-8 bg-black/10 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
-          <div className="absolute top-48 left-32 w-6 h-6 bg-black/8 rounded-full animate-bounce" style={{ animationDelay: '1.2s' }}></div>
-          <div className="absolute bottom-32 left-20 w-10 h-10 bg-black/6 rounded-full animate-bounce" style={{ animationDelay: '2.1s' }}></div>
-          <div className="absolute bottom-48 right-32 w-4 h-4 bg-black/12 rounded-full animate-bounce" style={{ animationDelay: '0.8s' }}></div>
+          {/* Interactive floating speech bubbles that bounce */}
+          <div 
+            className="absolute w-8 h-8 bg-black/10 rounded-full floating-bubble scroll-bounce"
+            style={{
+              top: `${32 - scrollY * 0.02}%`,
+              right: `${20 + Math.sin(scrollY * 0.01) * 5}%`,
+              animationDelay: '0.5s'
+            }}
+          ></div>
+          <div 
+            className="absolute w-6 h-6 bg-black/8 rounded-full floating-bubble-delayed bouncy-wave"
+            style={{
+              top: `${48 + scrollY * 0.01}%`,
+              left: `${32 + Math.cos(scrollY * 0.008) * 3}%`,
+              animationDelay: '1.2s'
+            }}
+          ></div>
+          <div 
+            className="absolute w-10 h-10 bg-black/6 rounded-full floating-bubble scroll-bounce"
+            style={{
+              bottom: `${32 + scrollY * 0.015}%`,
+              left: `${20 + Math.sin(scrollY * 0.012) * 4}%`,
+              animationDelay: '2.1s'
+            }}
+          ></div>
+          <div 
+            className="absolute w-4 h-4 bg-black/12 rounded-full floating-bubble-delayed bouncy-wave"
+            style={{
+              bottom: `${48 - scrollY * 0.01}%`,
+              right: `${32 + Math.cos(scrollY * 0.015) * 6}%`,
+              animationDelay: '0.8s'
+            }}
+          ></div>
           
-          {/* Sound wave lines */}
-          <div className="absolute top-40 left-1/4">
+          {/* Interactive sound wave lines that react to scroll */}
+          <div 
+            className="absolute"
+            style={{
+              top: `${40 + scrollY * 0.02}%`,
+              left: `${25 + Math.sin(scrollY * 0.01) * 2}%`
+            }}
+          >
             <div className="flex space-x-1">
-              <div className="w-1 h-12 bg-black/20 rounded animate-pulse" style={{ animationDelay: '0s' }}></div>
-              <div className="w-1 h-8 bg-black/15 rounded animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-              <div className="w-1 h-16 bg-black/25 rounded animate-pulse" style={{ animationDelay: '0.4s' }}></div>
-              <div className="w-1 h-6 bg-black/10 rounded animate-pulse" style={{ animationDelay: '0.6s' }}></div>
+              <div className="w-1 bg-black/20 rounded bouncy-wave" style={{ height: `${48 + Math.sin(scrollY * 0.02) * 12}px`, animationDelay: '0s' }}></div>
+              <div className="w-1 bg-black/15 rounded voice-wave" style={{ height: `${32 + Math.cos(scrollY * 0.025) * 8}px`, animationDelay: '0.2s' }}></div>
+              <div className="w-1 bg-black/25 rounded bouncy-wave" style={{ height: `${64 + Math.sin(scrollY * 0.018) * 16}px`, animationDelay: '0.4s' }}></div>
+              <div className="w-1 bg-black/10 rounded voice-wave-delayed" style={{ height: `${24 + Math.cos(scrollY * 0.03) * 6}px`, animationDelay: '0.6s' }}></div>
             </div>
           </div>
           
-          <div className="absolute bottom-40 right-1/4">
+          <div 
+            className="absolute"
+            style={{
+              bottom: `${40 - scrollY * 0.015}%`,
+              right: `${25 + Math.cos(scrollY * 0.012) * 3}%`
+            }}
+          >
             <div className="flex space-x-1">
-              <div className="w-1 h-10 bg-black/18 rounded animate-pulse" style={{ animationDelay: '1s' }}></div>
-              <div className="w-1 h-14 bg-black/22 rounded animate-pulse" style={{ animationDelay: '1.2s' }}></div>
-              <div className="w-1 h-8 bg-black/12 rounded animate-pulse" style={{ animationDelay: '1.4s' }}></div>
-              <div className="w-1 h-12 bg-black/20 rounded animate-pulse" style={{ animationDelay: '1.6s' }}></div>
+              <div className="w-1 bg-black/18 rounded voice-wave" style={{ height: `${40 + Math.sin(scrollY * 0.02 + 1) * 10}px`, animationDelay: '1s' }}></div>
+              <div className="w-1 bg-black/22 rounded bouncy-wave" style={{ height: `${56 + Math.cos(scrollY * 0.025 + 1) * 14}px`, animationDelay: '1.2s' }}></div>
+              <div className="w-1 bg-black/12 rounded voice-wave-delayed" style={{ height: `${32 + Math.sin(scrollY * 0.018 + 1) * 8}px`, animationDelay: '1.4s' }}></div>
+              <div className="w-1 bg-black/20 rounded bouncy-wave" style={{ height: `${48 + Math.cos(scrollY * 0.022 + 1) * 12}px`, animationDelay: '1.6s' }}></div>
             </div>
           </div>
+          
+          {/* Ripple effects that appear on mouse movement */}
+          <div 
+            className="absolute w-32 h-32 border border-black/10 rounded-full ripple-effect"
+            style={{
+              left: `${mousePosition.x * 0.8}px`,
+              top: `${mousePosition.y * 0.8}px`,
+              transform: 'translate(-50%, -50%)'
+            }}
+          ></div>
+          <div 
+            className="absolute w-24 h-24 border border-black/5 rounded-full ripple-effect"
+            style={{
+              left: `${mousePosition.x * 0.6}px`,
+              top: `${mousePosition.y * 0.6}px`,
+              transform: 'translate(-50%, -50%)',
+              animationDelay: '1s'
+            }}
+          ></div>
           
           {/* Grid Pattern */}
           <div className="absolute inset-0 opacity-5">
@@ -101,20 +197,21 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Enhanced Scroll Indicator with voice wave */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <div className="flex flex-col items-center animate-bounce">
-            <div className="w-6 h-10 border-2 border-black/40 rounded-full flex justify-center mb-2">
-              <div className="w-1 h-3 bg-black/40 rounded-full mt-2 animate-pulse"></div>
+        {/* Enhanced Interactive Scroll Indicator */}
+        <div 
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          style={{
+            transform: `translateX(-50%) translateY(${Math.sin(scrollY * 0.02) * 5}px)`
+          }}
+        >
+          <div className="flex flex-col items-center scroll-bounce">
+            <div className="w-6 h-10 border-2 border-black/40 rounded-full flex justify-center mb-2 interactive-float">
+              <div className="w-1 h-3 bg-black/40 rounded-full mt-2 voice-wave"></div>
             </div>
             <div className="flex space-x-1">
-              <div className="w-1 h-2 bg-black/30 rounded animate-pulse"></div>
-              <div className="w-1 h-3 bg-black/40 rounded animate-pulse" style={{
-              animationDelay: '0.1s'
-            }}></div>
-              <div className="w-1 h-2 bg-black/30 rounded animate-pulse" style={{
-              animationDelay: '0.2s'
-            }}></div>
+              <div className="w-1 h-2 bg-black/30 rounded bouncy-wave"></div>
+              <div className="w-1 h-3 bg-black/40 rounded voice-wave" style={{ animationDelay: '0.1s' }}></div>
+              <div className="w-1 h-2 bg-black/30 rounded bouncy-wave" style={{ animationDelay: '0.2s' }}></div>
             </div>
           </div>
         </div>
@@ -558,4 +655,5 @@ const Index = () => {
       {showDemoForm && <DemoRequestForm onClose={() => setShowDemoForm(false)} />}
     </div>;
 };
+
 export default Index;
