@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { ArrowRight, Mic, Globe, Zap, Users, Languages, Clock, Star, Play, Volume2, MicIcon, Headphones } from "lucide-react";
+import { ArrowRight, Mic, Globe, Zap, Users, Languages, Clock, Star, Play, Volume2, MicIcon, Headphones, Radio } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 import DemoRequestForm from "@/components/DemoRequestForm";
+
 const Index = () => {
   const [showDemoForm, setShowDemoForm] = useState(false);
   const {
@@ -37,8 +38,9 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Animated Background Effects */}
+        {/* Enhanced Animated Background Effects with ECO theme */}
         <div className="absolute inset-0">
+          {/* Floating voice waves */}
           <div className="absolute top-20 left-10 w-72 h-72 bg-black/5 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-black/3 rounded-full blur-3xl animate-pulse" style={{
           animationDelay: '1s'
@@ -46,6 +48,31 @@ const Index = () => {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-black/7 rounded-full blur-3xl animate-pulse" style={{
           animationDelay: '2s'
         }}></div>
+          
+          {/* Floating speech bubbles */}
+          <div className="absolute top-32 right-20 w-8 h-8 bg-black/10 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+          <div className="absolute top-48 left-32 w-6 h-6 bg-black/8 rounded-full animate-bounce" style={{ animationDelay: '1.2s' }}></div>
+          <div className="absolute bottom-32 left-20 w-10 h-10 bg-black/6 rounded-full animate-bounce" style={{ animationDelay: '2.1s' }}></div>
+          <div className="absolute bottom-48 right-32 w-4 h-4 bg-black/12 rounded-full animate-bounce" style={{ animationDelay: '0.8s' }}></div>
+          
+          {/* Sound wave lines */}
+          <div className="absolute top-40 left-1/4">
+            <div className="flex space-x-1">
+              <div className="w-1 h-12 bg-black/20 rounded animate-pulse" style={{ animationDelay: '0s' }}></div>
+              <div className="w-1 h-8 bg-black/15 rounded animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+              <div className="w-1 h-16 bg-black/25 rounded animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+              <div className="w-1 h-6 bg-black/10 rounded animate-pulse" style={{ animationDelay: '0.6s' }}></div>
+            </div>
+          </div>
+          
+          <div className="absolute bottom-40 right-1/4">
+            <div className="flex space-x-1">
+              <div className="w-1 h-10 bg-black/18 rounded animate-pulse" style={{ animationDelay: '1s' }}></div>
+              <div className="w-1 h-14 bg-black/22 rounded animate-pulse" style={{ animationDelay: '1.2s' }}></div>
+              <div className="w-1 h-8 bg-black/12 rounded animate-pulse" style={{ animationDelay: '1.4s' }}></div>
+              <div className="w-1 h-12 bg-black/20 rounded animate-pulse" style={{ animationDelay: '1.6s' }}></div>
+            </div>
+          </div>
           
           {/* Grid Pattern */}
           <div className="absolute inset-0 opacity-5">
@@ -74,10 +101,21 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-black/40 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-black/40 rounded-full mt-2 animate-pulse"></div>
+        {/* Enhanced Scroll Indicator with voice wave */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="flex flex-col items-center animate-bounce">
+            <div className="w-6 h-10 border-2 border-black/40 rounded-full flex justify-center mb-2">
+              <div className="w-1 h-3 bg-black/40 rounded-full mt-2 animate-pulse"></div>
+            </div>
+            <div className="flex space-x-1">
+              <div className="w-1 h-2 bg-black/30 rounded animate-pulse"></div>
+              <div className="w-1 h-3 bg-black/40 rounded animate-pulse" style={{
+              animationDelay: '0.1s'
+            }}></div>
+              <div className="w-1 h-2 bg-black/30 rounded animate-pulse" style={{
+              animationDelay: '0.2s'
+            }}></div>
+            </div>
           </div>
         </div>
       </section>
@@ -87,7 +125,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-20">
             <div className={`inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-black/10 border border-black/20 mb-6 sm:mb-8 ${isRTL ? 'flex-row-reverse' : ''}`}>
-              <Play className={`w-4 h-4 sm:w-5 sm:h-5 text-black ${isRTL ? 'ml-2' : 'mr-2'}`} />
+              <Radio className={`w-4 h-4 sm:w-5 sm:h-5 text-black animate-pulse ${isRTL ? 'ml-2' : 'mr-2'}`} />
               <span className="text-sm sm:text-base text-black/90">{t('demo.title')}</span>
             </div>
             <h2 className={`text-3xl sm:text-5xl md:text-6xl font-black mb-4 sm:mb-6 text-black ${isRTL ? 'leading-relaxed' : ''}`}>
@@ -97,7 +135,7 @@ const Index = () => {
             </h2>
             <p className={`text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 ${isRTL ? 'leading-relaxed' : ''}`}>{t('demo.subtitle')}</p>
             
-            {/* Live Indicator */}
+            {/* Enhanced Live Indicator with voice waves */}
             <div className={`flex items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <div className="relative">
                 <div className="w-3 h-3 sm:w-4 sm:h-4 bg-black rounded-full animate-ping absolute"></div>
@@ -106,6 +144,12 @@ const Index = () => {
               <span className={`text-black font-bold text-base sm:text-lg ${isRTL ? 'leading-relaxed' : ''}`}>{t('demo.liveIndicator')}</span>
               <div className="px-3 sm:px-4 py-1 sm:py-2 bg-black/20 rounded-full backdrop-blur-sm border border-black/30">
                 <span className={`text-xs sm:text-sm text-black font-semibold ${isRTL ? 'leading-relaxed' : ''}`}>{t('demo.speakers')}</span>
+              </div>
+              {/* Mini voice wave indicator */}
+              <div className="flex space-x-1 ml-2">
+                <div className="w-1 h-3 bg-black/40 rounded animate-pulse"></div>
+                <div className="w-1 h-4 bg-black/60 rounded animate-pulse" style={{ animationDelay: '0.1s' }}></div>
+                <div className="w-1 h-2 bg-black/30 rounded animate-pulse" style={{ animationDelay: '0.2s' }}></div>
               </div>
             </div>
           </div>

@@ -11,14 +11,14 @@ export const translations = {
       speak: "SPEAK",
       any: "ANY",
       language: "LANGUAGE",
-      subtitle: "AI that interprets conversations, not just words",
+      subtitle: "AI speech-to-speech interpreter that understands conversations, not just words",
       cta: "Experience Live Demo"
     },
     demo: {
       title: "MULTILINGUAL",
       conference: "CONFERENCE",
       liveNow: "LIVE NOW",
-      subtitle: "Real business meeting happening across 3 languages simultaneously",
+      subtitle: "Real business meeting happening across 3 languages with speech-to-speech interpretation",
       liveIndicator: "LIVE CONFERENCE",
       speakers: "4 Speakers • 3 Languages",
       progress: "Conference Progress",
@@ -41,24 +41,24 @@ export const translations = {
       carlosTranslatedFr: "Je suis complètement d'accord, Sarah. Cependant, nous devrions aussi considérer les différences culturelles spécifiques..."
     },
     features: {
-      title: "Beyond Translation",
-      subtitle: "AI that understands context, emotion, and culture",
-      instant: "Instant",
-      instantDesc: "Ultra-low latency processing for natural conversation flow",
-      contextual: "Contextual",
-      contextualDesc: "Understands nuance, tone, and cultural context",
+      title: "Beyond Speech Translation",
+      subtitle: "AI speech-to-speech technology that preserves voice, emotion, and cultural context",
+      instant: "Real-Time",
+      instantDesc: "Ultra-low latency speech-to-speech processing for natural conversation flow",
+      contextual: "Voice-Aware",
+      contextualDesc: "Preserves speaker's tone, emotion, and cultural nuances in voice translation",
       universal: "Universal",
-      universalDesc: "50+ languages with expanding capabilities"
+      universalDesc: "50+ languages with natural voice synthesis for each speaker"
     },
     technology: {
-      title: "Revolutionary Technology",
-      subtitle: "The future of cross-language communication",
+      title: "Revolutionary Speech-to-Speech Technology",
+      subtitle: "The future of voice-based cross-language communication",
       speechRecognition: "Advanced Speech Recognition",
-      speechDesc: "State-of-the-art ASR technology that handles accents, background noise, and multiple speakers simultaneously.",
-      neuralTranslation: "Neural Translation",
-      neuralDesc: "AI-powered translation that preserves meaning, context, and emotional tone across languages.",
+      speechDesc: "State-of-the-art voice processing that handles accents, background noise, and multiple speakers simultaneously.",
+      neuralTranslation: "Neural Voice Translation",
+      neuralDesc: "AI-powered speech-to-speech translation that preserves meaning, context, and vocal characteristics.",
       voiceSynthesis: "Natural Voice Synthesis",
-      voiceDesc: "Human-like voice generation that maintains the speaker's intended emotion and emphasis.",
+      voiceDesc: "Human-like voice generation that maintains the speaker's intended emotion and speaking style.",
       processingSpeed: "Processing Speed",
       ultraFast: "Ultra-fast",
       accuracyRate: "Accuracy Rate",
@@ -66,9 +66,9 @@ export const translations = {
       languagesCount: "50+ Languages"
     },
     cta: {
-      title: "Ready to Break Language Barriers?",
-      subtitle: "Experience the future of real-time interpretation\nSpeak to the world using Nihki.",
-      contact: "Contact us for a Demo",
+      title: "Ready to Experience Speech-to-Speech AI?",
+      subtitle: "Transform multilingual communication with voice interpretation\nSpeak naturally across languages with Nihki.",
+      contact: "Request Speech Demo",
       accuracy: "Accuracy",
       support: "Support"
     }
@@ -84,14 +84,14 @@ export const translations = {
       speak: "تحدث",
       any: "بأي",
       language: "لغة",
-      subtitle: "ذكاء اصطناعي يفسر المحادثات، وليس مجرد الكلمات",
+      subtitle: "ذكاء اصطناعي للترجمة الصوتية المباشرة يفهم المحادثات وليس مجرد الكلمات",
       cta: "جرب النظام الآن"
     },
     demo: {
       title: "مؤتمر",
       conference: "متعدد",
       liveNow: "اللغات مباشر",
-      subtitle: "اجتماع عمل حقيقي يحدث عبر 3 لغات في وقت واحد",
+      subtitle: "اجتماع عمل حقيقي يحدث عبر 3 لغات مع الترجمة الصوتية المباشرة",
       liveIndicator: "مؤتمر مباشر",
       speakers: "4 متحدثين • 3 لغات",
       progress: "تقدم المؤتمر",
@@ -114,24 +114,24 @@ export const translations = {
       carlosTranslatedFr: "Je suis complètement d'accord, Sarah. Cependant, nous devrions aussi considérer les différences culturelles spécifiques de chaque région européenne..."
     },
     features: {
-      title: "أكثر من مجرد ترجمة",
-      subtitle: "ذكاء اصطناعي يفهم السياق والعاطفة والثقافة",
+      title: "أكثر من مجرد ترجمة صوتية",
+      subtitle: "تقنية ذكاء اصطناعي للترجمة الصوتية تحافظ على الصوت والعاطفة والسياق الثقافي",
       instant: "فوري",
-      instantDesc: "معالجة بزمن استجابة منخفض جداً لتدفق طبيعي للمحادثة",
-      contextual: "سياقي",
-      contextualDesc: "يفهم الفروق الدقيقة والنبرة والسياق الثقافي",
+      instantDesc: "معالجة ترجمة صوتية بزمن استجابة منخفض جداً لتدفق طبيعي للمحادثة",
+      contextual: "مدرك للصوت",
+      contextualDesc: "يحافظ على نبرة المتحدث وعاطفته والفروق الثقافية في الترجمة الصوتية",
       universal: "عالمي",
-      universalDesc: "أكثر من 50 لغة مع قدرات متنامية"
+      universalDesc: "أكثر من 50 لغة مع تركيب صوتي طبيعي لكل متحدث"
     },
     technology: {
-      title: "تكنولوجيا ثورية",
-      subtitle: "مستقبل التواصل عبر اللغات",
+      title: "تكنولوجيا ثورية للترجمة الصوتية",
+      subtitle: "مستقبل التواصل الصوتي عبر اللغات",
       speechRecognition: "تقنية التعرف على الكلام المتقدمة",
-      speechDesc: "تقنية حديثة للتعرف على الكلام تتعامل مع اللهجات وضوضاء الخلفية والمتحدثين المتعددين في نفس الوقت.",
-      neuralTranslation: "الترجمة العصبية",
-      neuralDesc: "ترجمة مدعومة بالذكاء الاصطناعي تحافظ على المعنى والسياق والنبرة العاطفية عبر اللغات.",
+      speechDesc: "معالجة صوتية حديثة تتعامل مع اللهجات وضوضاء الخلفية والمتحدثين المتعددين في نفس الوقت.",
+      neuralTranslation: "الترجمة الصوتية العصبية",
+      neuralDesc: "ترجمة صوتية مدعومة بالذكاء الاصطناعي تحافظ على المعنى والسياق والخصائص الصوتية.",
       voiceSynthesis: "تركيب الصوت الطبيعي",
-      voiceDesc: "توليد صوت شبيه بالإنسان يحافظ على العاطفة والتأكيد المقصود من المتحدث.",
+      voiceDesc: "توليد صوت شبيه بالإنسان يحافظ على العاطفة وأسلوب الكلام المقصود من المتحدث.",
       processingSpeed: "سرعة المعالجة",
       ultraFast: "سريع جداً",
       accuracyRate: "معدل الدقة",
@@ -139,9 +139,9 @@ export const translations = {
       languagesCount: "أكثر من 50 لغة"
     },
     cta: {
-      title: "هل أنت مستعد لكسر حواجز اللغة؟",
-      subtitle: "اختبر مستقبل الترجمة الفورية\nتحدث مع العالم باستخدام نيهكي.",
-      contact: "تواصل معنا للحصول على عرض توضيحي",
+      title: "هل أنت مستعد لتجربة الذكاء الاصطناعي للترجمة الصوتية؟",
+      subtitle: "حول التواصل متعدد اللغات مع الترجمة الصوتية\nتحدث بطبيعية عبر اللغات مع نيهكي.",
+      contact: "اطلب عرضاً توضيحياً صوتياً",
       accuracy: "الدقة",
       support: "الدعم"
     }
