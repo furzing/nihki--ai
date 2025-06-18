@@ -78,14 +78,14 @@ export const translations = {
       demo: "العرض التوضيحي",
       features: "الميزات",
       technology: "التكنولوجيا",
-      tryDemo: "جرب العرض"
+      tryDemo: "جرب النظام"
     },
     hero: {
       speak: "تحدث",
       any: "بأي",
       language: "لغة",
       subtitle: "ذكاء اصطناعي يفسر المحادثات، وليس مجرد الكلمات",
-      cta: "استكشف العرض المباشر"
+      cta: "جرب النظام الآن"
     },
     demo: {
       title: "مؤتمر",
@@ -96,7 +96,7 @@ export const translations = {
       speakers: "4 متحدثين • 3 لغات",
       progress: "تقدم المؤتمر",
       elapsed: "مضى 47 دقيقة",
-      ceoName: "سارة تشين - الرئيس التنفيذي",
+      ceoName: "سارة تشين - الرئيسة التنفيذية",
       speakingIn: "تتحدث بالإنجليزية",
       aiProcessing: "معالجة الذكاء الاصطناعي",
       toSpanish: "→ الإسبانية (كارلوس)",
@@ -109,9 +109,9 @@ export const translations = {
       carlosQuote: "أوافق تماماً، سارة. ومع ذلك، يجب أن نأخذ في الاعتبار أيضاً الاختلافات الثقافية المحددة لكل منطقة أوروبية...",
       carlosName: "كارلوس رودريغيز",
       speakingInSpanish: "يتحدث بالإسبانية",
-      carlosOriginal: "Estoy completamente de acuerdo, Sarah. Sin embargo, también deberíamos considerar las diferencias culturales específicas de cada región europea...",
-      carlosTranslatedEn: "أوافق تماماً، سارة. ومع ذلك، يجب أن نأخذ في الاعتبار أيضاً الاختلافات الثقافية المحددة...",
-      carlosTranslatedFr: "أوافق تماماً، سارة. ومع ذلك، يجب أن نأخذ في الاعتبار أيضاً الاختلافات الثقافية المحددة..."
+      carlosOriginal: "أوافق تماماً يا سارة، لكن يجب أن نضع في اعتبارنا الاختلافات الثقافية الخاصة بكل منطقة أوروبية، فلكل سوق خصائصه المميزة...",
+      carlosTranslatedEn: "I completely agree, Sarah. However, we should also consider the specific cultural differences of each European region...",
+      carlosTranslatedFr: "Je suis complètement d'accord, Sarah. Cependant, nous devrions aussi considérer les différences culturelles spécifiques de chaque région européenne..."
     },
     features: {
       title: "أكثر من مجرد ترجمة",
@@ -141,7 +141,7 @@ export const translations = {
     cta: {
       title: "هل أنت مستعد لكسر حواجز اللغة؟",
       subtitle: "اختبر مستقبل الترجمة الفورية\nتحدث مع العالم باستخدام نيهكي.",
-      contact: "اتصل بنا للحصول على عرض توضيحي",
+      contact: "تواصل معنا للحصول على عرض توضيحي",
       accuracy: "الدقة",
       support: "الدعم"
     }

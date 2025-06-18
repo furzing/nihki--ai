@@ -130,16 +130,16 @@ const Index = () => {
               {/* Conversation Flow */}
               <div className="space-y-8">
                 
-                {/* Speaker 1 - English */}
+                {/* Speaker 1 - English/Arabic depending on language */}
                 <div className="grid lg:grid-cols-2 gap-8">
                   <div className="space-y-4">
                     <div className="flex items-center space-x-4 mb-4">
                       <div className="w-16 h-16 bg-black/20 rounded-full flex items-center justify-center border-2 border-black/30">
-                        <span className="text-black font-bold text-lg">🇺🇸</span>
+                        <span className="text-black font-bold text-lg">{isRTL ? '🇸🇦' : '🇺🇸'}</span>
                       </div>
                       <div className="flex-1">
                         <div className="text-black font-bold text-lg">{t('demo.ceoName')}</div>
-                        <div className="text-gray-600">{t('demo.speakingIn')}</div>
+                        <div className="text-gray-600">{isRTL ? 'تتحدث بالعربية' : t('demo.speakingIn')}</div>
                       </div>
                       <div className="flex items-center space-x-1">
                         <div className="w-2 h-8 bg-black/80 rounded animate-pulse"></div>
@@ -178,25 +178,48 @@ const Index = () => {
                       </div>
                     </div>
                     
-                    {/* Output to Spanish */}
-                    <div className="bg-white/40 rounded-xl p-4 border border-black/10 backdrop-blur-sm">
-                      <div className="flex items-center space-x-2 mb-3">
-                        <Headphones className="w-4 h-4 text-black" />
-                        <span className="text-xs text-black/80 font-semibold">{t('demo.toSpanish')}</span>
-                        <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse"></div>
-                      </div>
-                      <p className="text-black/90">"Profundicemos en nuestra estrategia de expansión para Q2. Creo que el mercado europeo presenta nuestra mayor oportunidad..."</p>
-                    </div>
+                    {/* Output translations based on current language */}
+                    {isRTL ? (
+                      <>
+                        <div className="bg-white/40 rounded-xl p-4 border border-black/10 backdrop-blur-sm">
+                          <div className="flex items-center space-x-2 mb-3">
+                            <Headphones className="w-4 h-4 text-black" />
+                            <span className="text-xs text-black/80 font-semibold">→ الإنجليزية (سارة)</span>
+                            <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse"></div>
+                          </div>
+                          <p className="text-black/90">"Let's dive into our Q2 expansion strategy. I believe the European market presents our biggest opportunity..."</p>
+                        </div>
 
-                    {/* Output to French */}
-                    <div className="bg-white/40 rounded-xl p-4 border border-black/10 backdrop-blur-sm">
-                      <div className="flex items-center space-x-2 mb-3">
-                        <Headphones className="w-4 h-4 text-black" />
-                        <span className="text-xs text-black/80 font-semibold">{t('demo.toFrench')}</span>
-                        <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse"></div>
-                      </div>
-                      <p className="text-black/90">"Approfondissons notre stratégie d'expansion Q2. Je crois que le marché européen présente notre plus grande opportunité..."</p>
-                    </div>
+                        <div className="bg-white/40 rounded-xl p-4 border border-black/10 backdrop-blur-sm">
+                          <div className="flex items-center space-x-2 mb-3">
+                            <Headphones className="w-4 h-4 text-black" />
+                            <span className="text-xs text-black/80 font-semibold">→ الفرنسية (ماري)</span>
+                            <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse"></div>
+                          </div>
+                          <p className="text-black/90">"Approfondissons notre stratégie d'expansion Q2. Je crois que le marché européen présente notre plus grande opportunité..."</p>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="bg-white/40 rounded-xl p-4 border border-black/10 backdrop-blur-sm">
+                          <div className="flex items-center space-x-2 mb-3">
+                            <Headphones className="w-4 h-4 text-black" />
+                            <span className="text-xs text-black/80 font-semibold">{t('demo.toSpanish')}</span>
+                            <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse"></div>
+                          </div>
+                          <p className="text-black/90">"Profundicemos en nuestra estrategia de expansión para Q2. Creo que el mercado europeo presenta nuestra mayor oportunidad..."</p>
+                        </div>
+
+                        <div className="bg-white/40 rounded-xl p-4 border border-black/10 backdrop-blur-sm">
+                          <div className="flex items-center space-x-2 mb-3">
+                            <Headphones className="w-4 h-4 text-black" />
+                            <span className="text-xs text-black/80 font-semibold">{t('demo.toFrench')}</span>
+                            <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse"></div>
+                          </div>
+                          <p className="text-black/90">"Approfondissons notre stratégie d'expansion Q2. Je crois que le marché européen présente notre plus grande opportunité..."</p>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
 
@@ -213,16 +236,16 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* Speaker 2 Response - Spanish */}
+                {/* Speaker 2 Response - Spanish/Arabic depending on language */}
                 <div className="grid lg:grid-cols-2 gap-8">
                   <div className="space-y-4">
                     <div className="flex items-center space-x-4 mb-4">
                       <div className="w-16 h-16 bg-black/20 rounded-full flex items-center justify-center border-2 border-black/30">
-                        <span className="text-black font-bold text-lg">🇪🇸</span>
+                        <span className="text-black font-bold text-lg">{isRTL ? '🇸🇦' : '🇪🇸'}</span>
                       </div>
                       <div className="flex-1">
-                        <div className="text-black font-bold text-lg">{t('demo.carlosName')}</div>
-                        <div className="text-gray-600">{t('demo.speakingInSpanish')}</div>
+                        <div className="text-black font-bold text-lg">{isRTL ? 'أحمد الراشد' : t('demo.carlosName')}</div>
+                        <div className="text-gray-600">{isRTL ? 'يتحدث بالعربية' : t('demo.speakingInSpanish')}</div>
                       </div>
                       <div className="flex items-center space-x-1">
                         <div className="w-2 h-7 bg-black/70 rounded animate-pulse" style={{
@@ -264,27 +287,56 @@ const Index = () => {
                       </div>
                     </div>
                     
-                    <div className="bg-white/40 rounded-xl p-4 border border-black/10 backdrop-blur-sm">
-                      <div className="flex items-center space-x-2 mb-3">
-                        <Headphones className="w-4 h-4 text-black" />
-                        <span className="text-xs text-black/80 font-semibold">{t('demo.toEnglish')}</span>
-                        <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse" style={{
-                        animationDelay: '2s'
-                      }}></div>
-                      </div>
-                      <p className="text-black/90">{t('demo.carlosTranslatedEn')}</p>
-                    </div>
+                    {/* Output translations for second speaker based on current language */}
+                    {isRTL ? (
+                      <>
+                        <div className="bg-white/40 rounded-xl p-4 border border-black/10 backdrop-blur-sm">
+                          <div className="flex items-center space-x-2 mb-3">
+                            <Headphones className="w-4 h-4 text-black" />
+                            <span className="text-xs text-black/80 font-semibold">→ الإنجليزية (أحمد)</span>
+                            <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse" style={{
+                            animationDelay: '2s'
+                          }}></div>
+                          </div>
+                          <p className="text-black/90">{t('demo.carlosTranslatedEn')}</p>
+                        </div>
 
-                    <div className="bg-white/40 rounded-xl p-4 border border-black/10 backdrop-blur-sm">
-                      <div className="flex items-center space-x-2 mb-3">
-                        <Headphones className="w-4 h-4 text-black" />
-                        <span className="text-xs text-black/80 font-semibold">{t('demo.toFrench')}</span>
-                        <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse" style={{
-                        animationDelay: '2s'
-                      }}></div>
-                      </div>
-                      <p className="text-black/90">{t('demo.carlosTranslatedFr')}</p>
-                    </div>
+                        <div className="bg-white/40 rounded-xl p-4 border border-black/10 backdrop-blur-sm">
+                          <div className="flex items-center space-x-2 mb-3">
+                            <Headphones className="w-4 h-4 text-black" />
+                            <span className="text-xs text-black/80 font-semibold">→ الفرنسية (أحمد)</span>
+                            <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse" style={{
+                            animationDelay: '2s'
+                          }}></div>
+                          </div>
+                          <p className="text-black/90">{t('demo.carlosTranslatedFr')}</p>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="bg-white/40 rounded-xl p-4 border border-black/10 backdrop-blur-sm">
+                          <div className="flex items-center space-x-2 mb-3">
+                            <Headphones className="w-4 h-4 text-black" />
+                            <span className="text-xs text-black/80 font-semibold">{t('demo.toEnglish')}</span>
+                            <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse" style={{
+                            animationDelay: '2s'
+                          }}></div>
+                          </div>
+                          <p className="text-black/90">{t('demo.carlosTranslatedEn')}</p>
+                        </div>
+
+                        <div className="bg-white/40 rounded-xl p-4 border border-black/10 backdrop-blur-sm">
+                          <div className="flex items-center space-x-2 mb-3">
+                            <Headphones className="w-4 h-4 text-black" />
+                            <span className="text-xs text-black/80 font-semibold">{t('demo.toFrench')}</span>
+                            <div className="ml-auto w-2 h-2 bg-black rounded-full animate-pulse" style={{
+                            animationDelay: '2s'
+                          }}></div>
+                          </div>
+                          <p className="text-black/90">{t('demo.carlosTranslatedFr')}</p>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
