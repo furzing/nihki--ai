@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, Mic, Globe, Zap, Users, Languages, Clock, Star, Play, Volume2, MicIcon, Headphones, Radio } from "lucide-react";
+import { ArrowRight, Mic, Globe, Zap, Users, Languages, Clock, Star, Play, Volume2, MicIcon, Headphones, Radio, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -11,6 +11,7 @@ const Index = () => {
   const [showDemoForm, setShowDemoForm] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   const {
     t
@@ -43,6 +44,8 @@ const Index = () => {
             <div className="flex items-center">
               <img alt="Nihki" className="h-12 w-auto" src="/lovable-uploads/700367a1-438b-472b-97b6-dd82762bf7bb.png" />
             </div>
+            
+            {/* Desktop Navigation */}
             <div className={`hidden md:flex items-center ${isRTL ? 'space-x-reverse space-x-8' : 'space-x-8'}`}>
               <a href="#demo" className="text-gray-700 hover:text-black transition-colors">{t('nav.demo')}</a>
               <a href="#features" className="text-gray-700 hover:text-black transition-colors">{t('nav.features')}</a>
@@ -52,7 +55,58 @@ const Index = () => {
                 {t('nav.tryDemo')}
               </Button>
             </div>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden flex items-center space-x-3">
+              <LanguageToggle />
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="p-2"
+              >
+                {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </Button>
+            </div>
           </div>
+
+          {/* Mobile Menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden border-t border-black/10 bg-white/95 backdrop-blur-xl">
+              <div className="px-4 py-4 space-y-4">
+                <a 
+                  href="#demo" 
+                  className="block text-gray-700 hover:text-black transition-colors py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {t('nav.demo')}
+                </a>
+                <a 
+                  href="#features" 
+                  className="block text-gray-700 hover:text-black transition-colors py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {t('nav.features')}
+                </a>
+                <a 
+                  href="#technology" 
+                  className="block text-gray-700 hover:text-black transition-colors py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {t('nav.technology')}
+                </a>
+                <Button 
+                  onClick={() => {
+                    setShowDemoForm(true);
+                    setIsMobileMenuOpen(false);
+                  }} 
+                  className="w-full bg-black text-white hover:bg-gray-800 border-2 border-black mt-4"
+                >
+                  {t('nav.tryDemo')}
+                </Button>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -482,19 +536,19 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Performance Metrics */}
-              <div className="mt-12 grid grid-cols-3 gap-8 text-center">
+              {/* Performance Metrics - Fixed for mobile */}
+              <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 text-center">
                 <div className="p-4 bg-black/5 rounded-xl border border-black/10">
-                  <div className="text-3xl font-black text-black mb-2">&lt; 200ms</div>
-                  <div className="text-sm text-gray-600">{t('demo.responseTime')}</div>
+                  <div className="text-2xl sm:text-3xl font-black text-black mb-2">&lt; 200ms</div>
+                  <div className="text-xs sm:text-sm text-gray-600">{t('demo.responseTime')}</div>
                 </div>
                 <div className="p-4 bg-black/5 rounded-xl border border-black/10">
-                  <div className="text-3xl font-black text-black mb-2">99.8%</div>
-                  <div className="text-sm text-gray-600">{t('demo.accuracy')}</div>
+                  <div className="text-2xl sm:text-3xl font-black text-black mb-2">99.8%</div>
+                  <div className="text-xs sm:text-sm text-gray-600">{t('demo.accuracy')}</div>
                 </div>
                 <div className="p-4 bg-black/5 rounded-xl border border-black/10">
-                  <div className="text-3xl font-black text-black mb-2">50+</div>
-                  <div className="text-sm text-gray-600">{t('demo.languages')}</div>
+                  <div className="text-2xl sm:text-3xl font-black text-black mb-2">50+</div>
+                  <div className="text-xs sm:text-sm text-gray-600">{t('demo.languages')}</div>
                 </div>
               </div>
             </div>
