@@ -1,4 +1,8 @@
+
 import { useState, useEffect } from "react";
+import { Radio, Zap, Headphones, Clock, Users, Languages, Mic, Globe, Volume2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Navigation from "@/components/Navigation";
