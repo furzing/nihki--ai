@@ -1,24 +1,17 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, Mic, Globe, Zap, Users, Languages, Clock, Star, Play, Volume2, MicIcon, Headphones, Radio, Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useLanguage } from "@/contexts/LanguageContext";
-import LanguageToggle from "@/components/LanguageToggle";
+import Navigation from "@/components/Navigation";
+import HeroSection from "@/components/HeroSection";
 import DemoRequestForm from "@/components/DemoRequestForm";
 
 const Index = () => {
   const [showDemoForm, setShowDemoForm] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
-  const {
-    t
-  } = useTranslation();
-  const {
-    isRTL
-  } = useLanguage();
+  const { t } = useTranslation();
+  const { isRTL } = useLanguage();
 
   // Interactive scroll and mouse tracking
   useEffect(() => {
@@ -36,240 +29,15 @@ const Index = () => {
     };
   }, []);
 
-  return <div className="min-h-screen bg-white text-black overflow-x-hidden">
-      {/* Navigation */}
-      <nav className="fixed top-0 z-40 w-full bg-white/90 backdrop-blur-xl border-b border-black/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <img alt="Nihki" className="h-12 w-auto" src="/lovable-uploads/700367a1-438b-472b-97b6-dd82762bf7bb.png" />
-            </div>
-            
-            {/* Desktop Navigation */}
-            <div className={`hidden md:flex items-center ${isRTL ? 'space-x-reverse space-x-8' : 'space-x-8'}`}>
-              <a href="#demo" className="text-gray-700 hover:text-black transition-colors">{t('nav.demo')}</a>
-              <a href="#features" className="text-gray-700 hover:text-black transition-colors">{t('nav.features')}</a>
-              <a href="#technology" className="text-gray-700 hover:text-black transition-colors">{t('nav.technology')}</a>
-              <LanguageToggle />
-              <Button onClick={() => setShowDemoForm(true)} className="bg-black text-white hover:bg-gray-800 border-2 border-black">
-                {t('nav.tryDemo')}
-              </Button>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center space-x-3">
-              <LanguageToggle />
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2"
-              >
-                {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </Button>
-            </div>
-          </div>
-
-          {/* Mobile Menu */}
-          {isMobileMenuOpen && (
-            <div className="md:hidden border-t border-black/10 bg-white/95 backdrop-blur-xl">
-              <div className="px-4 py-4 space-y-4">
-                <a 
-                  href="#demo" 
-                  className="block text-gray-700 hover:text-black transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {t('nav.demo')}
-                </a>
-                <a 
-                  href="#features" 
-                  className="block text-gray-700 hover:text-black transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {t('nav.features')}
-                </a>
-                <a 
-                  href="#technology" 
-                  className="block text-gray-700 hover:text-black transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {t('nav.technology')}
-                </a>
-                <Button 
-                  onClick={() => {
-                    setShowDemoForm(true);
-                    setIsMobileMenuOpen(false);
-                  }} 
-                  className="w-full bg-black text-white hover:bg-gray-800 border-2 border-black mt-4"
-                >
-                  {t('nav.tryDemo')}
-                </Button>
-              </div>
-            </div>
-          )}
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Enhanced Interactive Animated Background Effects */}
-        <div className="absolute inset-0">
-          {/* Floating interactive voice waves that follow scroll */}
-          <div 
-            className="absolute w-72 h-72 bg-black/5 rounded-full blur-3xl interactive-float"
-            style={{
-              top: `${20 - scrollY * 0.05}%`,
-              left: `${10 + mousePosition.x * 0.01}%`,
-              transform: `translateX(${mousePosition.x * 0.02}px) translateY(${-scrollY * 0.1}px)`
-            }}
-          ></div>
-          <div 
-            className="absolute w-96 h-96 bg-black/3 rounded-full blur-3xl interactive-float floating-bubble-delayed"
-            style={{
-              bottom: `${20 + scrollY * 0.03}%`,
-              right: `${10 + mousePosition.y * 0.01}%`,
-              transform: `translateX(${-mousePosition.x * 0.015}px) translateY(${scrollY * 0.08}px)`
-            }}
-          ></div>
-          <div 
-            className="absolute w-64 h-64 bg-black/7 rounded-full blur-3xl speech-pulse"
-            style={{
-              top: '50%',
-              left: '50%',
-              transform: `translate(-50%, -50%) translateX(${mousePosition.x * 0.01}px) translateY(${mousePosition.y * 0.01}px)`
-            }}
-          ></div>
-          
-          {/* Interactive floating speech bubbles that bounce */}
-          <div 
-            className="absolute w-8 h-8 bg-black/10 rounded-full floating-bubble scroll-bounce"
-            style={{
-              top: `${32 - scrollY * 0.02}%`,
-              right: `${20 + Math.sin(scrollY * 0.01) * 5}%`,
-              animationDelay: '0.5s'
-            }}
-          ></div>
-          <div 
-            className="absolute w-6 h-6 bg-black/8 rounded-full floating-bubble-delayed bouncy-wave"
-            style={{
-              top: `${48 + scrollY * 0.01}%`,
-              left: `${32 + Math.cos(scrollY * 0.008) * 3}%`,
-              animationDelay: '1.2s'
-            }}
-          ></div>
-          <div 
-            className="absolute w-10 h-10 bg-black/6 rounded-full floating-bubble scroll-bounce"
-            style={{
-              bottom: `${32 + scrollY * 0.015}%`,
-              left: `${20 + Math.sin(scrollY * 0.012) * 4}%`,
-              animationDelay: '2.1s'
-            }}
-          ></div>
-          <div 
-            className="absolute w-4 h-4 bg-black/12 rounded-full floating-bubble-delayed bouncy-wave"
-            style={{
-              bottom: `${48 - scrollY * 0.01}%`,
-              right: `${32 + Math.cos(scrollY * 0.015) * 6}%`,
-              animationDelay: '0.8s'
-            }}
-          ></div>
-          
-          {/* Interactive sound wave lines that react to scroll */}
-          <div 
-            className="absolute"
-            style={{
-              top: `${40 + scrollY * 0.02}%`,
-              left: `${25 + Math.sin(scrollY * 0.01) * 2}%`
-            }}
-          >
-            <div className="flex space-x-1">
-              <div className="w-1 bg-black/20 rounded bouncy-wave" style={{ height: `${48 + Math.sin(scrollY * 0.02) * 12}px`, animationDelay: '0s' }}></div>
-              <div className="w-1 bg-black/15 rounded voice-wave" style={{ height: `${32 + Math.cos(scrollY * 0.025) * 8}px`, animationDelay: '0.2s' }}></div>
-              <div className="w-1 bg-black/25 rounded bouncy-wave" style={{ height: `${64 + Math.sin(scrollY * 0.018) * 16}px`, animationDelay: '0.4s' }}></div>
-              <div className="w-1 bg-black/10 rounded voice-wave-delayed" style={{ height: `${24 + Math.cos(scrollY * 0.03) * 6}px`, animationDelay: '0.6s' }}></div>
-            </div>
-          </div>
-          
-          <div 
-            className="absolute"
-            style={{
-              bottom: `${40 - scrollY * 0.015}%`,
-              right: `${25 + Math.cos(scrollY * 0.012) * 3}%`
-            }}
-          >
-            <div className="flex space-x-1">
-              <div className="w-1 bg-black/18 rounded voice-wave" style={{ height: `${40 + Math.sin(scrollY * 0.02 + 1) * 10}px`, animationDelay: '1s' }}></div>
-              <div className="w-1 bg-black/22 rounded bouncy-wave" style={{ height: `${56 + Math.cos(scrollY * 0.025 + 1) * 14}px`, animationDelay: '1.2s' }}></div>
-              <div className="w-1 bg-black/12 rounded voice-wave-delayed" style={{ height: `${32 + Math.sin(scrollY * 0.018 + 1) * 8}px`, animationDelay: '1.4s' }}></div>
-              <div className="w-1 bg-black/20 rounded bouncy-wave" style={{ height: `${48 + Math.cos(scrollY * 0.022 + 1) * 12}px`, animationDelay: '1.6s' }}></div>
-            </div>
-          </div>
-          
-          {/* Ripple effects that appear on mouse movement */}
-          <div 
-            className="absolute w-32 h-32 border border-black/10 rounded-full ripple-effect"
-            style={{
-              left: `${mousePosition.x * 0.8}px`,
-              top: `${mousePosition.y * 0.8}px`,
-              transform: 'translate(-50%, -50%)'
-            }}
-          ></div>
-          <div 
-            className="absolute w-24 h-24 border border-black/5 rounded-full ripple-effect"
-            style={{
-              left: `${mousePosition.x * 0.6}px`,
-              top: `${mousePosition.y * 0.6}px`,
-              transform: 'translate(-50%, -50%)',
-              animationDelay: '1s'
-            }}
-          ></div>
-          
-          {/* Grid Pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="h-full w-full bg-[linear-gradient(rgba(0,0,0,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.1)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
-          </div>
-        </div>
-        
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
-          
-          
-          <h1 className={`text-4xl sm:text-6xl md:text-8xl font-black mb-6 leading-tight ${isRTL ? 'leading-relaxed' : ''}`}>
-            <span className="block py-0 my-0">{t('hero.speak')}</span>
-            <span className="block text-black py-0 my-0">{t('hero.any')}</span>
-            <span className="block my-[20px]">{t('hero.language')}</span>
-          </h1>
-          
-          <p className={`text-lg sm:text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto ${isRTL ? 'leading-relaxed' : 'leading-relaxed'}`}>
-            {t('hero.subtitle')}
-          </p>
-          
-          <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
-            <Button size="lg" onClick={() => setShowDemoForm(true)} className="text-lg sm:text-xl px-8 sm:px-10 py-4 sm:py-6 bg-black text-white hover:bg-gray-800 transform hover:scale-105 transition-all duration-300 border-2 border-black">
-              {t('hero.cta')}
-              <ArrowRight className={`w-5 h-5 sm:w-6 sm:h-6 ${isRTL ? 'mr-2 sm:mr-3 rotate-180' : 'ml-2 sm:ml-3'}`} />
-            </Button>
-          </div>
-        </div>
-        
-        {/* Enhanced Interactive Scroll Indicator */}
-        <div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          style={{
-            transform: `translateX(-50%) translateY(${Math.sin(scrollY * 0.02) * 5}px)`
-          }}
-        >
-          <div className="flex flex-col items-center scroll-bounce">
-            <div className="w-6 h-10 border-2 border-black/40 rounded-full flex justify-center mb-2 interactive-float">
-              <div className="w-1 h-3 bg-black/40 rounded-full mt-2 voice-wave"></div>
-            </div>
-            <div className="flex space-x-1">
-              <div className="w-1 h-2 bg-black/30 rounded bouncy-wave"></div>
-              <div className="w-1 h-3 bg-black/40 rounded voice-wave" style={{ animationDelay: '0.1s' }}></div>
-              <div className="w-1 h-2 bg-black/30 rounded bouncy-wave" style={{ animationDelay: '0.2s' }}></div>
-            </div>
-          </div>
-        </div>
-      </section>
+  return (
+    <div className="min-h-screen bg-white text-black overflow-x-hidden">
+      <Navigation onDemoClick={() => setShowDemoForm(true)} />
+      
+      <HeroSection 
+        scrollY={scrollY} 
+        mousePosition={mousePosition} 
+        onDemoClick={() => setShowDemoForm(true)} 
+      />
 
       {/* Live Conference Demo */}
       <section id="demo" className="relative py-20 sm:py-32 bg-white">
@@ -707,7 +475,8 @@ const Index = () => {
 
       {/* Demo Form Modal */}
       {showDemoForm && <DemoRequestForm onClose={() => setShowDemoForm(false)} />}
-    </div>;
+    </div>
+  );
 };
 
 export default Index;
