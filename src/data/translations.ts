@@ -40,6 +40,24 @@ export const translations = {
       carlosTranslatedEn: "I completely agree, Sarah. However, we should also consider the specific cultural differences of each European region...",
       carlosTranslatedFr: "Je suis complètement d'accord, Sarah. Cependant, nous devrions aussi considérer les différences culturelles spécifiques..."
     },
+    demoForm: {
+      title: "Request Live Demo",
+      subtitle: "Experience Nihki's AI interpretation in action",
+      fullName: "Full Name",
+      fullNamePlaceholder: "Your full name",
+      company: "Company",
+      companyPlaceholder: "Your company name",
+      email: "Email",
+      emailPlaceholder: "your.email@company.com",
+      testScenario: "What would you like to test?",
+      testScenarioPlaceholder: "Describe your use case (e.g., client interviews, international meetings, etc.)",
+      requestDemo: "Request Demo",
+      submitting: "Submitting...",
+      successTitle: "Demo Request Submitted!",
+      successMessage: "Thank you for your interest. We'll contact you within 24 hours to schedule your live demo.",
+      errorTitle: "Submission Failed",
+      errorMessage: "There was an error submitting your request. Please try again."
+    },
     features: {
       title: "Beyond Speech Translation",
       subtitle: "AI speech-to-speech technology that preserves voice, emotion, and cultural context",
@@ -112,6 +130,24 @@ export const translations = {
       carlosOriginal: "أوافق تماماً يا سارة، لكن يجب أن نضع في اعتبارنا الاختلافات الثقافية الخاصة بكل منطقة أوروبية، فلكل سوق خصائصه المميزة...",
       carlosTranslatedEn: "I completely agree, Sarah. However, we should also consider the specific cultural differences of each European region...",
       carlosTranslatedFr: "Je suis complètement d'accord, Sarah. Cependant, nous devrions aussi considérer les différences culturelles spécifiques de chaque région européenne..."
+    },
+    demoForm: {
+      title: "طلب عرض توضيحي مباشر",
+      subtitle: "اختبر تقنية الترجمة الصوتية من نيهكي",
+      fullName: "الاسم الكامل",
+      fullNamePlaceholder: "اسمك الكامل",
+      company: "الشركة",
+      companyPlaceholder: "اسم شركتك",
+      email: "البريد الإلكتروني",
+      emailPlaceholder: "your.email@company.com",
+      testScenario: "ما الذي تريد اختباره؟",
+      testScenarioPlaceholder: "اوصف حالة الاستخدام (مثل: مقابلات العملاء، الاجتماعات الدولية، إلخ)",
+      requestDemo: "طلب عرض توضيحي",
+      submitting: "جارٍ الإرسال...",
+      successTitle: "تم إرسال طلب العرض التوضيحي!",
+      successMessage: "شكراً لاهتمامك. سنتواصل معك خلال 24 ساعة لترتيب العرض التوضيحي المباشر.",
+      errorTitle: "فشل في الإرسال",
+      errorMessage: "حدث خطأ في إرسال طلبك. يرجى المحاولة مرة أخرى."
     },
     features: {
       title: "أكثر من مجرد ترجمة صوتية",

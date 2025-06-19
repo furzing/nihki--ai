@@ -457,7 +457,12 @@ const Index = () => {
           <p className={`text-lg sm:text-xl text-gray-600 mb-8 sm:mb-12 whitespace-pre-line ${isRTL ? 'leading-relaxed' : ''}`}>{t('cta.subtitle')}</p>
           
           <div className={`flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
-            <Button size="lg" variant="outline" className="text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300"
+              onClick={() => setShowDemoForm(true)}
+            >
               {t('cta.contact')}
             </Button>
           </div>

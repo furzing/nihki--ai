@@ -7,6 +7,8 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { X, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "@/hooks/useTranslation";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface DemoRequestFormProps {
   onClose: () => void;
@@ -21,6 +23,8 @@ const DemoRequestForm = ({ onClose }: DemoRequestFormProps) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { t } = useTranslation();
+  const { isRTL } = useLanguage();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,8 +36,8 @@ const DemoRequestForm = ({ onClose }: DemoRequestFormProps) => {
       
       // Show success toast
       toast({
-        title: "Demo Request Submitted!",
-        description: "Thank you for your interest. We'll contact you within 24 hours to schedule your live demo.",
+        title: t('demoForm.successTitle'),
+        description: t('demoForm.successMessage'),
       });
 
       // Reset form
@@ -52,8 +56,8 @@ const DemoRequestForm = ({ onClose }: DemoRequestFormProps) => {
     } catch (error) {
       console.error("Error submitting demo request:", error);
       toast({
-        title: "Submission Failed",
-        description: "There was an error submitting your request. Please try again.",
+        title: t('demoForm.errorTitle'),
+        description: t('demoForm.errorMessage'),
         variant: "destructive",
       });
     } finally {
@@ -74,46 +78,48 @@ const DemoRequestForm = ({ onClose }: DemoRequestFormProps) => {
         <CardHeader className="relative">
           <button
             onClick={onClose}
-            className="absolute right-4 top-4 p-1 rounded-full hover:bg-gray-100 transition-colors"
+            className={`absolute ${isRTL ? 'left-4' : 'right-4'} top-4 p-1 rounded-full hover:bg-gray-100 transition-colors`}
             disabled={isSubmitting}
           >
             <X className="w-4 h-4" />
           </button>
-          <CardTitle className="text-2xl font-bold text-center">
-            Request Live Demo
+          <CardTitle className={`text-2xl font-bold text-center ${isRTL ? 'leading-relaxed' : ''}`}>
+            {t('demoForm.title')}
           </CardTitle>
-          <p className="text-gray-600 text-center">
-            Experience Nihki's AI interpretation in action
+          <p className={`text-gray-600 text-center ${isRTL ? 'leading-relaxed' : ''}`}>
+            {t('demoForm.subtitle')}
           </p>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <Label htmlFor="name">Full Name</Label>
+              <Label htmlFor="name" className={isRTL ? 'leading-relaxed' : ''}>{t('demoForm.fullName')}</Label>
               <Input
                 id="name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 required
-                placeholder="Your full name"
+                placeholder={t('demoForm.fullNamePlaceholder')}
                 disabled={isSubmitting}
+                className={isRTL ? 'text-right' : ''}
               />
             </div>
             <div>
-              <Label htmlFor="company">Company</Label>
+              <Label htmlFor="company" className={isRTL ? 'leading-relaxed' : ''}>{t('demoForm.company')}</Label>
               <Input
                 id="company"
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
                 required
-                placeholder="Your company name"
+                placeholder={t('demoForm.companyPlaceholder')}
                 disabled={isSubmitting}
+                className={isRTL ? 'text-right' : ''}
               />
             </div>
             <div>
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email" className={isRTL ? 'leading-relaxed' : ''}>{t('demoForm.email')}</Label>
               <Input
                 id="email"
                 name="email"
@@ -121,21 +127,23 @@ const DemoRequestForm = ({ onClose }: DemoRequestFormProps) => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                placeholder="your.email@company.com"
+                placeholder={t('demoForm.emailPlaceholder')}
                 disabled={isSubmitting}
+                className={isRTL ? 'text-right' : ''}
               />
             </div>
             <div>
-              <Label htmlFor="testScenario">What would you like to test?</Label>
+              <Label htmlFor="testScenario" className={isRTL ? 'leading-relaxed' : ''}>{t('demoForm.testScenario')}</Label>
               <Textarea
                 id="testScenario"
                 name="testScenario"
                 value={formData.testScenario}
                 onChange={handleChange}
                 required
-                placeholder="Describe your use case (e.g., client interviews, international meetings, etc.)"
+                placeholder={t('demoForm.testScenarioPlaceholder')}
                 rows={3}
                 disabled={isSubmitting}
+                className={isRTL ? 'text-right' : ''}
               />
             </div>
             <Button 
@@ -144,7 +152,7 @@ const DemoRequestForm = ({ onClose }: DemoRequestFormProps) => {
               disabled={isSubmitting}
             >
               <Send className="w-4 h-4 mr-2" />
-              {isSubmitting ? "Submitting..." : "Request Demo"}
+              {isSubmitting ? t('demoForm.submitting') : t('demoForm.requestDemo')}
             </Button>
           </form>
         </CardContent>
