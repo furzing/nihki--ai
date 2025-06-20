@@ -99,11 +99,6 @@ const AnimatedBackground = ({ scrollY, mousePosition }: AnimatedBackgroundProps)
           transform: 'translate(-50%, -50%)'
         }}
       ></div>
-      
-      {/* Simplified grid pattern */}
-      <div className="absolute inset-0 opacity-3">
-        <div className="h-full w-full bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
-      </div>
     </div>
   );
 };
